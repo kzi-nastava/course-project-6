@@ -1,0 +1,17 @@
+C:\Users\ANJA\course-project-6\ProjectUSI\bin\Debug\ProjectUSI.exe.config
+C:\Users\ANJA\course-project-6\ProjectUSI\bin\Debug\ProjectUSI.exe
+C:\Users\ANJA\course-project-6\ProjectUSI\bin\Debug\ProjectUSI.pdb
+C:\Users\ANJA\course-project-6\ProjectUSI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ANJA\course-project-6\ProjectUSI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.csproj.AssemblyReference.cache
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.ManagerMainWindow.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Properties.Resources.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.csproj.GenerateResource.cache
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.csproj.CoreCompileInputs.cache
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.exe
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.pdb
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.RoomsWindow.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.EquipmentWindow.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.RelocateWindow.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Users.View.LoginWindow.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.AddRoomWindow.resources
