@@ -1,5 +1,7 @@
 using System;
 using System.Windows.Forms;
+using ProjectUSI.Doctor.Repository;
+using ProjectUSI.Doctor.View;
 using ProjectUSI.Manager.View;
 using ProjectUSI.Users.Controller;
 using ProjectUSI.Users.Model;
@@ -35,7 +37,10 @@ namespace ProjectUSI.Users.View
                             this.Dispose(false);
                             break;
                         case Role.Doctor:
-                            //TODO: otvoriti glavni prozor doktora
+                            AppointmentsRepository appointmentsRepository = new AppointmentsRepository();
+                            MedicalRecordRepository medicalRecordRepository = new MedicalRecordRepository();
+                            DoctorMainWindow doctorMainWindow = new DoctorMainWindow(appointmentsRepository, medicalRecordRepository);
+                            doctorMainWindow.Show();
                             break;
                         case Role.Patient:
                             //TODO: otvoriti glavni prozor pacijenta

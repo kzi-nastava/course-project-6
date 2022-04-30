@@ -50,6 +50,24 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Doctor\Controller\AppointmentsController.cs" />
+        <Compile Include="Doctor\Controller\MedicalRecordController.cs" />
+        <Compile Include="Doctor\Model\Appointments.cs" />
+        <Compile Include="Doctor\Model\MedicalRecord.cs" />
+        <Compile Include="Doctor\Repository\AppointmentsRepository.cs" />
+        <Compile Include="Doctor\Repository\MedicalRecordRepository.cs" />
+        <Compile Include="Doctor\View\AppointmentWindow.cs" />
+        <Compile Include="Doctor\View\AppointmentWindow.Designer.cs" />
+        <Compile Include="Doctor\View\CRUDAppointment.cs" />
+        <Compile Include="Doctor\View\CRUDAppointment.Designer.cs" />
+        <Compile Include="Doctor\View\CRUDAppointmentWindow.cs" />
+        <Compile Include="Doctor\View\CRUDAppointmentWindow.Designer.cs" />
+        <Compile Include="Doctor\View\DoctorMainWindow.cs" />
+        <Compile Include="Doctor\View\DoctorMainWindow.Designer.cs" />
+        <Compile Include="Doctor\View\ScheduleWindow.cs" />
+        <Compile Include="Doctor\View\ScheduleWindow.Designer.cs" />
+        <Compile Include="Doctor\View\UpdateAppointmentWindow.cs" />
+        <Compile Include="Doctor\View\UpdateAppointmentWindow.Designer.cs" />
         <Compile Include="Manager\Controller\AddRoomController.cs" />
         <Compile Include="Manager\Controller\EquipmentController.cs" />
         <Compile Include="Manager\Controller\RelocationController.cs" />
@@ -98,6 +116,12 @@
         <Compile Include="Users\View\LoginWindow.Designer.cs">
           <DependentUpon>LoginWindow.cs</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="Doctor\View\AppointmentWindow.resx" />
+        <EmbeddedResource Include="Doctor\View\CRUDAppointment.resx" />
+        <EmbeddedResource Include="Doctor\View\CRUDAppointmentWindow.resx" />
+        <EmbeddedResource Include="Doctor\View\DoctorMainWindow.resx" />
+        <EmbeddedResource Include="Doctor\View\ScheduleWindow.resx" />
+        <EmbeddedResource Include="Doctor\View\UpdateAppointmentWindow.resx" />
         <EmbeddedResource Include="Manager\View\AddRoomWindow.resx">
           <DependentUpon>AddRoomWindow.cs</DependentUpon>
         </EmbeddedResource>
@@ -142,6 +166,11 @@
       <Content Include="Data\Relocations.json" />
       <Content Include="Data\Rooms.json" />
       <Content Include="Data\Users.json" />
+      <Content Include="Doctor\Data\appointments.json" />
+      <Content Include="Doctor\Data\Appointments1.json" />
+      <Content Include="Doctor\Data\MedicalRecords.json" />
+      <Content Include="Doctor\Data\patients (1).json" />
+      <Content Include="Doctor\Data\users.json" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
