@@ -1,0 +1,119 @@
+{
+    "marinap@gmail.com":
+    {
+        "medicalRecord": 
+        {
+            "name": "Marina",
+            "surname": "Petrovic",
+            "LBO": "5429185734",
+            "phone": "0647321015",
+            "height": "174cm",
+            "weight": "67kg",
+            "previousIllnesses": [],
+            "allergens": []
+        },
+        "anamnesis": 
+        [
+            {
+                "date": "15.03.2022.",
+                "doctor": "Janko Jankovic",
+                "type": "check-up",
+                "notes": "",
+                "medication": []
+            }
+        ],
+        "appointings": [],
+        "changes": [],
+        "status": "pass"
+    },
+    "nmanjaaap@gmail.com":
+    {
+        "medicalRecord": 
+        {
+            "name": "Nemanja",
+            "surname": "Losak",
+            "LBO": "7523913542",
+            "phone": "0656585372",
+            "height": "183cm",
+            "weight": "78kg",
+            "previousIllnesses": [],
+            "allergens": ["penicillin"]
+        },
+        "anamnesis": [],
+        "appointings": [],
+        "changes": [],
+        "status": "pass"
+    },
+    "pera@gmail.com":
+    {
+        "medicalRecord":
+        {
+            "name": "Pera",
+            "surname": "Peric",
+            "LBO": "2416759315",
+            "phone": "0629257184",
+            "height": "179cm",
+            "weight": "70kg",
+            "previousIllnesses": [],
+            "allergens": []
+        },
+        "anamnesis": [],
+        "appointings": [],
+        "changes": [],
+        "status": "pass"
+    },
+    "marko@gmail.com":
+    {
+        "medicalRecord":
+        {
+            "name": "Marko",
+            "surname": "Markovic",
+            "LBO": "1473592481",
+            "phone": "0641593624",
+            "height": "181cm",
+            "weight": "79kg",
+            "previousIllnesses": [],
+            "allergens": []
+        },
+        "anamnesis": [],
+        "appointings": [],
+        "changes": [],
+        "status": "pass"
+    },
+    "jovana@gmail.com":
+    {
+        "medicalRecord":
+        {
+            "name": "Jovana",
+            "surname": "Jovanovic",
+            "LBO": "1539578246",
+            "phone": "0659856321",
+            "height": "176cm",
+            "weight": "66kg",
+            "previousIllnesses": [],
+            "allergens": []
+        },
+        "anamnesis": [],
+        "appointings": [],
+        "changes": [],
+        "status": "pass"
+    },
+    "tijana@gmail.com":
+    {
+        "medicalRecord":
+        {
+            "name": "Tijana",
+            "surname": "Tijanic",
+            "LBO": "1472589635",
+            "phone": "0662262636",
+            "height": "160cm",
+            "weight": "62kg",
+            "previousIllnesses": [],
+            "allergens": []
+        },
+        "anamnesis": [],
+        "appointings": [],
+        "changes": [],
+        "status": "pass"
+    }
+}

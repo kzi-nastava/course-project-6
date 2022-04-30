@@ -1,0 +1,85 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Windows.Forms;
+using Newtonsoft.Json;
+using ProjectUSI.Doctor.Controller;
+using ProjectUSI.Doctor.Model;
+using ProjectUSI.Doctor.Repository;
+
+namespace ProjectUSI.Doctor.View
+{
+    /// <summary>
+    /// This window represents patients's medical record when appointment has started.
+    /// </summary>
+    public partial class AppointmentWindow : Form
+    {
+        private MedicalRecordRepository _medicalRecordRepository;
+        public MedicalRecordController _controller;
+
+        public AppointmentWindow(String email, MedicalRecordRepository medicalRecordRepository,
+            MedicalRecordController medicalRecordController)
+        {
+            _medicalRecordRepository = medicalRecordRepository;
+            _controller = medicalRecordController;
+
+            InitializeComponent();
+            InitComponents(email);
+
+        }
+
+        private void InitComponents(String email)
+        {
+            foreach (MedicalRecord medicalRecord in _medicalRecordRepository.GetMedicalRecords())
+            {
+                if (medicalRecord.Email.Equals(email))
+                {
+                    textBox1.Text = medicalRecord.Name;
+                    textBox2.Text = medicalRecord.Surname;
+                    textBox3.Text = medicalRecord.Email;
+                    textBox4.Text = medicalRecord.LBO;
+                    textBox5.Text = medicalRecord.Phone;
+                    textBox6.Text = medicalRecord.Height;
+                    textBox7.Text = medicalRecord.Weight;
+                    textBox8.Text = medicalRecord.PreviousIllnesses;
+                    textBox9.Text = medicalRecord.Allergens;
+                    textBox10.Text = medicalRecord.Anamnesis;
+                }
+            }
+        }
+
+        private void buttonUpdateMedRec_Click(object sender, EventArgs e)
+        {
+            string email = textBox3.Text;
+            MedicalRecord newMedicalRecord = new MedicalRecord();
+            MedicalRecord toBeDeleted = new MedicalRecord();
+            List<MedicalRecord> medicalRecords = _medicalRecordRepository.GetMedicalRecords();
+            
+            foreach (MedicalRecord medicalRecord in medicalRecords)
+            {
+                if (medicalRecord.Email.Equals(email))
+                {
+                        newMedicalRecord.Name = textBox1.Text;
+                        newMedicalRecord.Surname = textBox2.Text;
+                        newMedicalRecord.Email = email;
+                        newMedicalRecord.LBO = textBox4.Text;
+                        newMedicalRecord.Phone = textBox5.Text;
+                        newMedicalRecord.Height = textBox6.Text;
+                        newMedicalRecord.Weight = textBox7.Text;
+                        newMedicalRecord.PreviousIllnesses = textBox8.Text;
+                        newMedicalRecord.Allergens = textBox9.Text;
+                        newMedicalRecord.Anamnesis = textBox10.Text;
+                        toBeDeleted = medicalRecord;
+                }
+            }
+            medicalRecords.Remove(toBeDeleted);
+            medicalRecords.Add(newMedicalRecord);
+            
+            File.WriteAllText(@"C:\Users\anita\OneDrive\Radna površina\ProjectUSI\Doctor\Data\MedicalRecords.json",
+                JsonConvert.SerializeObject(medicalRecords));
+            
+            MessageBox.Show("Medical record is successfully modified.", "Success!", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
+    }
+}
