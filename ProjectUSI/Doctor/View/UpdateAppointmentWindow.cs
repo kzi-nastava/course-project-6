@@ -75,7 +75,7 @@ namespace ProjectUSI.Doctor.View
             appointments.Remove(toBeDeleted);
             appointments.Add(newAppointment);
             
-            File.WriteAllText(@"C:\Users\anita\OneDrive\Radna površina\ProjectUSI\Doctor\Data\Appointments1.json",
+            File.WriteAllText(@"..\..\Doctor\Data\Appointments1.json",
                 JsonConvert.SerializeObject(appointments));
             
             MessageBox.Show("Appointment is successfully modified.", "Success!", MessageBoxButtons.OK,

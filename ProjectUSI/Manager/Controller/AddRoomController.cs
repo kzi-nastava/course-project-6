@@ -1,4 +1,4 @@
-using System;
+
 using ProjectUSI.Manager.Model;
 using ProjectUSI.Manager.Repository;
 using ProjectUSI.Manager.View;

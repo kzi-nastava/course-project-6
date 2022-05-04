@@ -14,7 +14,7 @@ namespace ProjectUSI.Doctor.Repository
         
         public MedicalRecordRepository()
         {
-            string json = File.ReadAllText(@"C:\Users\anita\OneDrive\Radna površina\ProjectUSI\Doctor\Data\MedicalRecords.json");
+            string json = File.ReadAllText(@"..\..\Doctor\Data\MedicalRecords.json");
             List<MedicalRecord> medicalRecord = JsonConvert.DeserializeObject<List<MedicalRecord>>(json);
             medicalRecords = medicalRecord;
         }

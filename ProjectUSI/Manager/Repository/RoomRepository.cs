@@ -11,7 +11,7 @@ namespace ProjectUSI.Manager.Repository
 
         public RoomRepository()
         {
-            string json = File.ReadAllText(@"C:\Users\ANJA\course-project-6\ProjectUSI\Data\Rooms.json");
+            string json = File.ReadAllText(@"..\..\Data\Rooms.json");
             List<Room> rooms = JsonConvert.DeserializeObject<List<Room>>(json);
             _rooms = rooms;
         }
@@ -67,7 +67,7 @@ namespace ProjectUSI.Manager.Repository
         
         public void Save()
         {
-            File.WriteAllText(@"C:\Users\ANJA\course-project-6\ProjectUSI\Data\Rooms.json", JsonConvert.SerializeObject(_rooms));
+            File.WriteAllText(@"..\..\Data\Rooms.json", JsonConvert.SerializeObject(_rooms));
         }
     }
 }

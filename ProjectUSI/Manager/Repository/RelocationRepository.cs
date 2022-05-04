@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using ProjectUSI.Manager.Model;
 
 namespace ProjectUSI.Manager.Repository
@@ -15,7 +13,7 @@ namespace ProjectUSI.Manager.Repository
 
         public RelocationRepository()
         {
-            string json = File.ReadAllText(@"C:\Users\ANJA\course-project-6\ProjectUSI\Data\Relocations.json");
+            string json = File.ReadAllText(@"..\..\Data\Relocations.json");
             List<Relocation> relocation = JsonConvert.DeserializeObject<List<Relocation>>(json);
             _relocations = relocation;
             _roomRepository = new RoomRepository();
@@ -48,7 +46,7 @@ namespace ProjectUSI.Manager.Repository
 
         public void Save()
         {
-            File.WriteAllText(@"C:\Users\ANJA\course-project-6\ProjectUSI\Data\Relocations.json", JsonConvert.SerializeObject(_relocations));
+            File.WriteAllText(@"..\..\Data\Relocations.json", JsonConvert.SerializeObject(_relocations));
         }
     }
 }

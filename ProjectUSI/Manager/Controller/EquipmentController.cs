@@ -1,7 +1,5 @@
-using System;
+
 using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Windows.Forms;
 using ProjectUSI.Manager.Model;
 using ProjectUSI.Manager.Repository;
 using ProjectUSI.Manager.View;

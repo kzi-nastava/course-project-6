@@ -75,7 +75,7 @@ namespace ProjectUSI.Doctor.View
             medicalRecords.Remove(toBeDeleted);
             medicalRecords.Add(newMedicalRecord);
             
-            File.WriteAllText(@"C:\Users\anita\OneDrive\Radna površina\ProjectUSI\Doctor\Data\MedicalRecords.json",
+            File.WriteAllText(@"..\..\Doctor\Data\MedicalRecords.json",
                 JsonConvert.SerializeObject(medicalRecords));
             
             MessageBox.Show("Medical record is successfully modified.", "Success!", MessageBoxButtons.OK,

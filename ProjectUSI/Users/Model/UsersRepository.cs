@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using ProjectUSI.Manager.Model;
 
 namespace ProjectUSI.Users.Model
 {
@@ -11,7 +10,7 @@ namespace ProjectUSI.Users.Model
 
         public UsersRepository()
         {
-            string json = File.ReadAllText(@"C:\Users\ANJA\course-project-6\ProjectUSI\Data\Users.json");
+            string json = File.ReadAllText(@"..\..\Data\Users.json");
             List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
             _users = users;
         }
@@ -65,7 +64,7 @@ namespace ProjectUSI.Users.Model
         
         public void Save()
         {
-            File.WriteAllText(@"C:\Users\ANJA\course-project-6\ProjectUSI\Data\Users.json", JsonConvert.SerializeObject(_users));
+            File.WriteAllText(@"..\..\Data\Users.json", JsonConvert.SerializeObject(_users));
         }
     }
 }

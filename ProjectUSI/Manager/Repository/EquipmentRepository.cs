@@ -11,7 +11,7 @@ namespace ProjectUSI.Manager.Repository
 
         public EquipmentRepository()
         {
-            string json = File.ReadAllText(@"C:\Users\ANJA\course-project-6\ProjectUSI\Data\Equipment.json");
+            string json = File.ReadAllText(@"..\..\Data\Equipment.json");
             List<Equipment> equipment = JsonConvert.DeserializeObject<List<Equipment>>(json);
             _equipment = equipment;
         }
@@ -50,7 +50,7 @@ namespace ProjectUSI.Manager.Repository
         
         public void Save()
         {
-            File.WriteAllText(@"C:\Users\ANJA\course-project-6\ProjectUSI\Data\Equipment.json", JsonConvert.SerializeObject(_equipment));
+            File.WriteAllText(@"..\..\Data\Equipment.json", JsonConvert.SerializeObject(_equipment));
         }
     }
 }

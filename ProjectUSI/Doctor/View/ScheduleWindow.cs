@@ -100,7 +100,7 @@ namespace ProjectUSI.Doctor.View
                 List<Appointments> appointmentsList = _appointmentsRepository.GetAppointments();
                 appointmentsList.Remove(app);
 
-                File.WriteAllText(@"C:\Users\anita\OneDrive\Radna površina\ProjectUSI\Doctor\Data\Appointments1.json",
+                File.WriteAllText(@"..\..\Doctor\Data\Appointments1.json",
                     JsonConvert.SerializeObject(appointmentsList));
 
                 appointments.Items.Clear();
