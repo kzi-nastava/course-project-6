@@ -124,8 +124,9 @@ namespace ProjectUSI.Manager.View
             this.btnRenovation.Name = "btnRenovation";
             this.btnRenovation.Size = new System.Drawing.Size(284, 47);
             this.btnRenovation.TabIndex = 1;
-            this.btnRenovation.Text = "Renovation";
+            this.btnRenovation.Text = "Renovations";
             this.btnRenovation.UseVisualStyleBackColor = true;
+            this.btnRenovation.Click += new System.EventHandler(this.btnRenovation_Click);
             // 
             // btnRooms
             // 

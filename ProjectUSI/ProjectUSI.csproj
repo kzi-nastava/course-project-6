@@ -58,8 +58,6 @@
         <Compile Include="Doctor\Repository\MedicalRecordRepository.cs" />
         <Compile Include="Doctor\View\AppointmentWindow.cs" />
         <Compile Include="Doctor\View\AppointmentWindow.Designer.cs" />
-        <Compile Include="Doctor\View\CRUDAppointment.cs" />
-        <Compile Include="Doctor\View\CRUDAppointment.Designer.cs" />
         <Compile Include="Doctor\View\CRUDAppointmentWindow.cs" />
         <Compile Include="Doctor\View\CRUDAppointmentWindow.Designer.cs" />
         <Compile Include="Doctor\View\DoctorMainWindow.cs" />
@@ -71,16 +69,20 @@
         <Compile Include="Manager\Controller\AddRoomController.cs" />
         <Compile Include="Manager\Controller\EquipmentController.cs" />
         <Compile Include="Manager\Controller\RelocationController.cs" />
+        <Compile Include="Manager\Controller\RenovationController.cs" />
         <Compile Include="Manager\Controller\RoomController.cs" />
         <Compile Include="Manager\Model\Equipment.cs" />
         <Compile Include="Manager\Model\EquipmentType.cs" />
+        <Compile Include="Manager\Model\Medicine.cs" />
         <Compile Include="Manager\Model\Quantity.cs" />
         <Compile Include="Manager\Model\Relocation.cs" />
+        <Compile Include="Manager\Model\Renovation.cs" />
         <Compile Include="Manager\Model\Room.cs" />
         <Compile Include="Manager\Model\RoomPurpose.cs" />
         <Compile Include="Manager\Repository\EquipmentRepository.cs" />
         <Compile Include="Manager\Repository\MainRepository.cs" />
         <Compile Include="Manager\Repository\RelocationRepository.cs" />
+        <Compile Include="Manager\Repository\RenovationRepository.cs" />
         <Compile Include="Manager\Repository\RoomRepository.cs" />
         <Compile Include="Manager\View\AddRoomWindow.cs">
           <SubType>Form</SubType>
@@ -102,6 +104,12 @@
         </Compile>
         <Compile Include="Manager\View\ManagerMainWindow.cs" />
         <Compile Include="Manager\View\ManagerMainWindow.Designer.cs" />
+        <Compile Include="Manager\View\RenovationWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Manager\View\RenovationWindow.Designer.cs">
+          <DependentUpon>RenovationWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Manager\View\RoomsWindow.cs" />
         <Compile Include="Manager\View\RoomsWindow.Designer.cs" />
         <Compile Include="Program.cs" />
@@ -117,7 +125,6 @@
           <DependentUpon>LoginWindow.cs</DependentUpon>
         </Compile>
         <EmbeddedResource Include="Doctor\View\AppointmentWindow.resx" />
-        <EmbeddedResource Include="Doctor\View\CRUDAppointment.resx" />
         <EmbeddedResource Include="Doctor\View\CRUDAppointmentWindow.resx" />
         <EmbeddedResource Include="Doctor\View\DoctorMainWindow.resx" />
         <EmbeddedResource Include="Doctor\View\ScheduleWindow.resx" />
@@ -131,6 +138,9 @@
         <EmbeddedResource Include="Manager\View\ManagerMainWindow.resx" />
         <EmbeddedResource Include="Manager\View\RelocateWindow.resx">
           <DependentUpon>RelocateWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Manager\View\RenovationWindow.resx">
+          <DependentUpon>RenovationWindow.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Manager\View\RoomsWindow.resx">
           <DependentUpon>RoomsWindow.cs</DependentUpon>
@@ -163,7 +173,9 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="Data\Equipment.json" />
+      <Content Include="Data\Medicine.json" />
       <Content Include="Data\Relocations.json" />
+      <Content Include="Data\Renovation.json" />
       <Content Include="Data\Rooms.json" />
       <Content Include="Data\Users.json" />
       <Content Include="Doctor\Data\appointments.json" />
