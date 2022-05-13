@@ -52,5 +52,13 @@ namespace ProjectUSI.Manager.View
         {
             _MainRepository.Save();
         }
+
+        private void btnRenovation_Click(object sender, EventArgs e)
+        {
+            RenovationWindow renovationWindow = new RenovationWindow(_MainRepository, null);
+            RenovationController renovationController = new RenovationController(new Renovation(), renovationWindow, _MainRepository);
+            renovationWindow._controller = renovationController;
+            renovationWindow.Show();
+        }
     }
 }

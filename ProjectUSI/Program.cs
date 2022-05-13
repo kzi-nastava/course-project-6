@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using ProjectUSI.Data;
 using ProjectUSI.Users.View;
 
 namespace ProjectUSI
@@ -15,7 +16,6 @@ namespace ProjectUSI
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginWindow());
-            
         }
     }
 }
