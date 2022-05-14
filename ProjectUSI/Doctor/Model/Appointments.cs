@@ -14,11 +14,12 @@ namespace ProjectUSI.Doctor.Model
         public string Date { get; set; }
         public string Time { get; set; }
         public string EndTime { get; set; }
+        public string RoomId { get; set; }
         
         public override string ToString()
         {
             return Id + "\t" + Type + "\t" + Patient + "\t" + PatientEmail + "\t" + Doctor + "\t" + Date + "\t" + Time +
-                   "\t" + EndTime;
+                   "\t" + EndTime + "\t" + RoomId;
         }
 
     }

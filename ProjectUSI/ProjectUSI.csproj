@@ -145,6 +145,9 @@
         <EmbeddedResource Include="Doctor\View\AppointmentWindow.resx" />
         <EmbeddedResource Include="Doctor\View\CRUDAppointmentWindow.resx" />
         <EmbeddedResource Include="Doctor\View\DoctorMainWindow.resx" />
+        <EmbeddedResource Include="Doctor\View\ReferralWindow.resx">
+          <DependentUpon>ReferralWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Doctor\View\ScheduleWindow.resx" />
         <EmbeddedResource Include="Doctor\View\UpdateAppointmentWindow.resx" />
         <EmbeddedResource Include="Manager\View\AddRoomWindow.resx">

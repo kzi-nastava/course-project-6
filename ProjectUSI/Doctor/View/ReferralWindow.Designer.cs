@@ -29,7 +29,7 @@ namespace ProjectUSI.Doctor.View
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
- private void InitializeComponent()
+        private void InitializeComponent()
         {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -52,6 +52,8 @@ namespace ProjectUSI.Doctor.View
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.referral = new System.Windows.Forms.Button();
+            this.chosenDoctor = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox1
@@ -257,20 +259,41 @@ namespace ProjectUSI.Doctor.View
             this.referral.BackColor = System.Drawing.SystemColors.Info;
             this.referral.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.referral.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.referral.Location = new System.Drawing.Point(773, 373);
+            this.referral.Location = new System.Drawing.Point(732, 224);
             this.referral.Name = "referral";
-            this.referral.Size = new System.Drawing.Size(211, 53);
+            this.referral.Size = new System.Drawing.Size(241, 53);
             this.referral.TabIndex = 23;
             this.referral.Text = "Referral to another doctor";
             this.referral.UseVisualStyleBackColor = false;
             this.referral.Click += new System.EventHandler(this.referral_Click);
+            // 
+            // chosenDoctor
+            // 
+            this.chosenDoctor.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.chosenDoctor.Location = new System.Drawing.Point(732, 127);
+            this.chosenDoctor.Multiline = true;
+            this.chosenDoctor.Name = "chosenDoctor";
+            this.chosenDoctor.Size = new System.Drawing.Size(241, 41);
+            this.chosenDoctor.TabIndex = 24;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.textBox21.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.textBox21.Location = new System.Drawing.Point(732, 71);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(241, 24);
+            this.textBox21.TabIndex = 25;
+            this.textBox21.Text = "New Doctor\'s name and lastname:";
             // 
             // ReferralWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(992, 459);
+            this.ClientSize = new System.Drawing.Size(1000, 459);
+            this.Controls.Add(this.textBox21);
+            this.Controls.Add(this.chosenDoctor);
             this.Controls.Add(this.referral);
             this.Controls.Add(this.textBox20);
             this.Controls.Add(this.textBox19);
@@ -297,6 +320,10 @@ namespace ProjectUSI.Doctor.View
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.TextBox textBox21;
+
+        private System.Windows.Forms.TextBox chosenDoctor;
 
         private System.Windows.Forms.Button referral;
 
