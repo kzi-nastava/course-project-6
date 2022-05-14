@@ -13,6 +13,7 @@ namespace ProjectUSI.Manager.View
         private MainRepository _mainRepository;
         private List<Room> _rooms;
         public RoomController _controller;
+        
         public RoomsWindow(MainRepository mainRepository, RoomController roomController)
         {
             _mainRepository = mainRepository;
@@ -75,6 +76,25 @@ namespace ProjectUSI.Manager.View
             }
             
             
+        }
+
+        private void btnRenovate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index = listBox1.SelectedIndex;
+                Room roomForRenovation = _mainRepository._RoomRepository.GetRooms()[index];
+                ConfirmRenovationWindow confirm = new ConfirmRenovationWindow(roomForRenovation, _mainRepository, new RenovationController(null, null, _mainRepository));
+                confirm.Show();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Room does not exist!");
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("You need to select room!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
     

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using ProjectUSI.Data;
 using ProjectUSI.Users.View;
 
 namespace ProjectUSI

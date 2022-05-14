@@ -1,8 +1,6 @@
 using System.Collections.Generic;
-using System.IO;
-using Newtonsoft.Json;
 
-namespace ProjectUSI.Data
+namespace ProjectUSI.Manager.Model
 {
     public class Medicine
     {
