@@ -52,16 +52,34 @@
     <ItemGroup>
         <Compile Include="Doctor\Controller\AppointmentsController.cs" />
         <Compile Include="Doctor\Controller\MedicalRecordController.cs" />
+        <Compile Include="Doctor\Controller\PrescriptionController.cs" />
+        <Compile Include="Doctor\Controller\ReferralController.cs" />
         <Compile Include="Doctor\Model\Appointments.cs" />
         <Compile Include="Doctor\Model\MedicalRecord.cs" />
+        <Compile Include="Doctor\Model\Prescription.cs" />
+        <Compile Include="Doctor\Model\Referral.cs" />
         <Compile Include="Doctor\Repository\AppointmentsRepository.cs" />
         <Compile Include="Doctor\Repository\MedicalRecordRepository.cs" />
+        <Compile Include="Doctor\Repository\PrescriptionRepository.cs" />
+        <Compile Include="Doctor\Repository\ReferralRepository.cs" />
         <Compile Include="Doctor\View\AppointmentWindow.cs" />
         <Compile Include="Doctor\View\AppointmentWindow.Designer.cs" />
         <Compile Include="Doctor\View\CRUDAppointmentWindow.cs" />
         <Compile Include="Doctor\View\CRUDAppointmentWindow.Designer.cs" />
         <Compile Include="Doctor\View\DoctorMainWindow.cs" />
         <Compile Include="Doctor\View\DoctorMainWindow.Designer.cs" />
+        <Compile Include="Doctor\View\PrescriptionWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Doctor\View\PrescriptionWindow.Designer.cs">
+          <DependentUpon>PrescriptionWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Doctor\View\ReferralWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Doctor\View\ReferralWindow.Designer.cs">
+          <DependentUpon>ReferralWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Doctor\View\ScheduleWindow.cs" />
         <Compile Include="Doctor\View\ScheduleWindow.Designer.cs" />
         <Compile Include="Doctor\View\UpdateAppointmentWindow.cs" />
@@ -134,6 +152,9 @@
         <EmbeddedResource Include="Doctor\View\AppointmentWindow.resx" />
         <EmbeddedResource Include="Doctor\View\CRUDAppointmentWindow.resx" />
         <EmbeddedResource Include="Doctor\View\DoctorMainWindow.resx" />
+        <EmbeddedResource Include="Doctor\View\ReferralWindow.resx">
+          <DependentUpon>ReferralWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Doctor\View\ScheduleWindow.resx" />
         <EmbeddedResource Include="Doctor\View\UpdateAppointmentWindow.resx" />
         <EmbeddedResource Include="Manager\View\AddRoomWindow.resx">
@@ -192,6 +213,8 @@
       <Content Include="Doctor\Data\Appointments1.json" />
       <Content Include="Doctor\Data\MedicalRecords.json" />
       <Content Include="Doctor\Data\patients (1).json" />
+      <Content Include="Doctor\Data\Prescription.json" />
+      <Content Include="Doctor\Data\Referrals.json" />
       <Content Include="Doctor\Data\users.json" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
