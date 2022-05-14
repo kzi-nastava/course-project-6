@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
@@ -19,6 +20,7 @@ namespace ProjectUSI.Manager.Repository
         public void Add(Renovation renovation)
         {
             _renovation.Add(renovation);
+            this.SetRenovation(_renovation);
         }
 
         
@@ -30,9 +32,8 @@ namespace ProjectUSI.Manager.Repository
         {
             this._renovation = renovation;
         }
-        
-        
-        
+
+
         public void Save()
         {
             File.WriteAllText(@"..\..\Data\Renovation.json", JsonConvert.SerializeObject(_renovation));

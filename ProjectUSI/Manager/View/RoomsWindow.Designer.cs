@@ -74,6 +74,7 @@ namespace ProjectUSI.Manager.View
             this.btnRenovate.TabIndex = 5;
             this.btnRenovate.Text = "Renovate";
             this.btnRenovate.UseVisualStyleBackColor = false;
+            this.btnRenovate.Click += new System.EventHandler(this.btnRenovate_Click);
             // 
             // btnDelete
             // 
