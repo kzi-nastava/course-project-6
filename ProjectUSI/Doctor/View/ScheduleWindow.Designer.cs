@@ -45,7 +45,7 @@ namespace ProjectUSI.Doctor.View
             this.appointments.ItemHeight = 16;
             this.appointments.Location = new System.Drawing.Point(49, 28);
             this.appointments.Name = "appointments";
-            this.appointments.Size = new System.Drawing.Size(802, 340);
+            this.appointments.Size = new System.Drawing.Size(816, 340);
             this.appointments.TabIndex = 0;
             // 
             // textBox1

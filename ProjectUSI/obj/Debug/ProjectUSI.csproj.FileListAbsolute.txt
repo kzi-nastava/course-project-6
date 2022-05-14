@@ -22,7 +22,6 @@ C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\bin\Debug\N
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\bin\Debug\Newtonsoft.Json.xml
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.csproj.AssemblyReference.cache
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.AppointmentWindow.resources
-C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.CRUDAppointment.resources
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.CRUDAppointmentWindow.resources
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.DoctorMainWindow.resources
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.ScheduleWindow.resources
@@ -44,3 +43,5 @@ C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.Docto
 C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.ScheduleWindow.resources
 C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.UpdateAppointmentWindow.resources
 C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.RenovationWindow.resources
+C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.RenovationWindow.resources
+C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.ReferralWindow.resources

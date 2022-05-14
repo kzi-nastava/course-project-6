@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 using ProjectUSI.Doctor.Controller;
 using ProjectUSI.Doctor.Model;
 using ProjectUSI.Doctor.Repository;
@@ -44,29 +46,28 @@ namespace ProjectUSI.Doctor.View
 
         private void referral_Click(object sender, EventArgs e)
         {
-            string email = textBox3.Text;
             Referral newReferral = new Referral();
-            List<Referral> referrals = _referralRepository.GetReferrals();
+            List<Referral> referrals = new List<Referral>();
             
-            foreach (Referral referral in referrals)
-            {
-                if (referral.Email.Equals(email))
-                {
-                    newReferral.Name = textBox1.Text;
-                    newReferral.Surname = textBox2.Text;
-                    newReferral.Email = email;
-                    newReferral.LBO = textBox4.Text;
-                    newReferral.Phone = textBox5.Text;
-                    newReferral.Height = textBox6.Text;
-                    newReferral.Weight = textBox7.Text;
-                    newReferral.PreviousIllnesses = textBox8.Text;
-                    newReferral.Allergens = textBox9.Text;
-                    newReferral.Anamnesis = textBox10.Text;
+            newReferral.Name = textBox1.Text;
+            newReferral.Surname = textBox2.Text;
+            newReferral.Email = textBox3.Text;
+            newReferral.LBO = textBox4.Text;
+            newReferral.Phone = textBox5.Text;
+            newReferral.Height = textBox6.Text;
+            newReferral.Weight = textBox7.Text;
+            newReferral.PreviousIllnesses = textBox8.Text;
+            newReferral.Allergens = textBox9.Text;
+            newReferral.Anamnesis = textBox10.Text;
+            newReferral.ChosenDoctor = chosenDoctor.Text;
                     
-                    //TODO ComboBox;
-                }
-            }
             referrals.Add(newReferral);
+            
+            File.WriteAllText(@"..\..\Doctor\Data\Referrals.json",
+                JsonConvert.SerializeObject(referrals));
+            
+            MessageBox.Show("Referral is successfully given!", "Success!", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
     }
 }
