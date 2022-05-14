@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using ProjectUSI.Manager.Model;
 using ProjectUSI.Manager.Repository;
 using ProjectUSI.Manager.View;
@@ -78,7 +77,6 @@ namespace ProjectUSI.Manager.Controller
         {
             DeselectRoomsInRenovation();
             ReturnRoomsInUse();
-            
         }
 
         public void DeselectRoomsInRenovation()
@@ -132,6 +130,7 @@ namespace ProjectUSI.Manager.Controller
             }
         }
         
+
         private bool IsPastDate(DateTime date)
         {
             DateTime now = DateTime.Now;
