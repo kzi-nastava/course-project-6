@@ -26,6 +26,24 @@ namespace ProjectUSI.Manager.Repository
                 }
             }
         }
+
+        private Equipment Find(Equipment equipment)
+        {
+            foreach (Equipment e in _equipment)
+            {
+                if (e.Equals(equipment))
+                {
+                    return equipment;
+                }
+            }
+
+            return null;
+        }
+
+        public void UpdateEquipmentRoom(Equipment equipment, Room room)
+        {
+            this.Find(equipment).DeployedIn = room;
+        }
         public List<Equipment> GetEquipment()
         {
             return this._equipment;
