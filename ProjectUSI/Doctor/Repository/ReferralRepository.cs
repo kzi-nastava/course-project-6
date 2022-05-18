@@ -5,6 +5,9 @@ using ProjectUSI.Doctor.Model;
 
 namespace ProjectUSI.Doctor.Repository
 {
+    /// <summary>
+    /// This class gets referrals from file.
+    /// </summary>
     public class ReferralRepository
     {
         public List<Referral> referrals;

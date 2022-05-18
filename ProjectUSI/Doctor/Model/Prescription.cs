@@ -1,5 +1,8 @@
 namespace ProjectUSI.Doctor.Model
 {
+    /// <summary>
+    /// This class represents one prescription.
+    /// </summary>
     public class Prescription
         {
             public string PatientEmail { get; set; }

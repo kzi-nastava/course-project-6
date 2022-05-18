@@ -1,5 +1,8 @@
 namespace ProjectUSI.Doctor.Model
 {
+    /// <summary>
+    /// This class represents one referral.
+    /// </summary>
     public class Referral
     {
         public string Name { get; set; }
