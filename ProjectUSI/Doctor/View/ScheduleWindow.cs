@@ -71,24 +71,24 @@ namespace ProjectUSI.Doctor.View
         {
             try
             {
-
                 int index = appointments.SelectedIndex;
                 Appointments app = _appointmentsRepository.GetAppointments()[index];
                 AppointmentWindow appointment = new AppointmentWindow(app.PatientEmail, _medicalRecordRepository,
                     new MedicalRecordController(new MedicalRecord(), null, _medicalRecordRepository));
                 appointment.ShowDialog();
             }
+            
             catch (ArgumentOutOfRangeException exception)
             {
                 MessageBox.Show("Please select which appointment you want to delete.", "Warning!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
             catch (NullReferenceException exception)
             {
                 MessageBox.Show("Please select which appointment you want to delete.", "Warning!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
         private void buttonDeleteApp_Click(object sender, EventArgs e)
@@ -105,20 +105,22 @@ namespace ProjectUSI.Doctor.View
 
                 appointments.Items.Clear();
                 InitListBox();
+                
                 MessageBox.Show("Selected appointment is successfully deleted.","Success!",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
             catch (ArgumentOutOfRangeException exception)
             {
                 MessageBox.Show("Please select which appointment you want to delete.","Warning!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
             catch (NullReferenceException exception)
             {
                 MessageBox.Show("Please select which appointment you want to delete.","Warning!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        
         }
 
         private void buttonUpdateApp_Click(object sender, EventArgs e)

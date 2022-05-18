@@ -20,5 +20,6 @@ namespace ProjectUSI.Data
 
         public string Name { get; set; }
         public Dictionary<string, double> Ingredients { get; set; }
+        
     }
 }
