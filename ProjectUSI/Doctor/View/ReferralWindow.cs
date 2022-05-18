@@ -9,6 +9,9 @@ using ProjectUSI.Doctor.Repository;
 
 namespace ProjectUSI.Doctor.View
 {
+    /// <summary>
+    /// This window represents referral to another doctor.
+    /// </summary>
     public partial class ReferralWindow : Form
     {
         private ReferralRepository _referralRepository;
@@ -20,6 +23,7 @@ namespace ProjectUSI.Doctor.View
             _referralRepository = referralRepository;
             _controller = referralController;
             _medicalRecordRepository = medicalRecordRepository;
+            
             InitializeComponent();
             InitComponents(email);
         }
@@ -80,9 +84,6 @@ namespace ProjectUSI.Doctor.View
                 MessageBox.Show("Chosen doctor doesn't exist!", "Warning!", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
-
-
-
         }
     }
 }
