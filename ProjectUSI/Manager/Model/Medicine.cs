@@ -18,5 +18,6 @@ namespace ProjectUSI.Manager.Model
 
         public string Name { get; set; }
         public Dictionary<string, double> Ingredients { get; set; }
+        
     }
 }

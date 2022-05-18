@@ -85,7 +85,8 @@ namespace ProjectUSI.Doctor.View
         
         private void buttonPrescription_Click(object sender, EventArgs e)
         {
-            PrescriptionWindow prescriptionWindow = new PrescriptionWindow();
+            string allergens = textBox9.Text;
+            PrescriptionWindow prescriptionWindow = new PrescriptionWindow(_medicalRecordRepository, allergens);
             prescriptionWindow.Show();
         }
 

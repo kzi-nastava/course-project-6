@@ -49,6 +49,10 @@ namespace ProjectUSI.Doctor.View
             Referral newReferral = new Referral();
             List<Referral> referrals = new List<Referral>();
             
+            List<string> doctors = new List<string>();
+            doctors.Add("Petar Petrovic");
+            doctors.Add("Janko Jankovic");
+            
             newReferral.Name = textBox1.Text;
             newReferral.Surname = textBox2.Text;
             newReferral.Email = textBox3.Text;
@@ -59,15 +63,26 @@ namespace ProjectUSI.Doctor.View
             newReferral.PreviousIllnesses = textBox8.Text;
             newReferral.Allergens = textBox9.Text;
             newReferral.Anamnesis = textBox10.Text;
-            newReferral.ChosenDoctor = chosenDoctor.Text;
-                    
-            referrals.Add(newReferral);
             
-            File.WriteAllText(@"..\..\Doctor\Data\Referrals.json",
-                JsonConvert.SerializeObject(referrals));
-            
-            MessageBox.Show("Referral is successfully given!", "Success!", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            if (doctors.Contains(chosenDoctor.Text))
+            {
+                newReferral.ChosenDoctor = chosenDoctor.Text;
+                referrals.Add(newReferral);
+
+                File.WriteAllText(@"..\..\Doctor\Data\Referrals.json",
+                    JsonConvert.SerializeObject(referrals));
+
+                MessageBox.Show("Referral is successfully given!", "Success!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Chosen doctor doesn't exist!", "Warning!", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
+
+
         }
     }
 }

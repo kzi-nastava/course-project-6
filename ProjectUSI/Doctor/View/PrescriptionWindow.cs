@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using ProjectUSI.Data;
 using ProjectUSI.Doctor.Model;
+using ProjectUSI.Doctor.Repository;
 
 namespace ProjectUSI.Doctor.View
 {
     public partial class PrescriptionWindow : Form
     {
-        public PrescriptionWindow()
+        private MedicalRecordRepository _medicalRecordRepository;
+        private string _allergens;
+        
+        public PrescriptionWindow(MedicalRecordRepository medicalRecordRepository, string Allergens)
         {
+            _medicalRecordRepository = medicalRecordRepository;
+            Allergens = _allergens;
             InitializeComponent();
         }
 
@@ -18,12 +25,18 @@ namespace ProjectUSI.Doctor.View
         {
             Prescription prescription = new Prescription();
             List<Prescription> prescriptions = new List<Prescription>();
+            List<Medicine> medicines = new List<Medicine>();
+            List<MedicalRecord> medicalRecords = _medicalRecordRepository.GetMedicalRecords();
+            
             
             prescription.PatientEmail = patientEmail.Text;
             prescription.Medication = medications.Text;
             prescription.Instruction = instructions.Text;
             prescription.Time = time.Text;
-            
+            // foreach (Medicine medicine in medicines)
+            // {
+            //     if(medicine.Ingredients.ContainsKey())
+            // }
             prescriptions.Add(prescription);
             
             File.WriteAllText(@"..\..\Doctor\Data\Prescription.json",
