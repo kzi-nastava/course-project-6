@@ -29,7 +29,8 @@ namespace ProjectUSI.Manager.View
                 request.Ingredients.Add(word);
             }
 
-            request.Status = Status.NaCekanju;
+            request.Status = Status.OnHold;
+            request.Reason = "";
             
             List<Request> requests = _requestRepository.GetRequests();
             requests.Add(request);
