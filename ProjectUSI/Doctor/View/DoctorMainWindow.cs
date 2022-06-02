@@ -35,5 +35,11 @@ namespace ProjectUSI.Doctor.View
             CRUDAppointmentWindow crudAppointmentWindow = new CRUDAppointmentWindow(new AppointmentsRepository());
             crudAppointmentWindow.Show();
         }
+
+        private void buttonMedicaments_Click(object sender, EventArgs e)
+        {
+            VerifyMedicines verifyMedicines = new VerifyMedicines();
+            verifyMedicines.Show();
+        }
     }
 }

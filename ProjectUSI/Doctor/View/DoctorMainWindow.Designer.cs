@@ -78,6 +78,7 @@ namespace ProjectUSI.Doctor.View
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.Info;
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button2.Location = new System.Drawing.Point(25, 310);
@@ -85,7 +86,8 @@ namespace ProjectUSI.Doctor.View
             this.button2.Size = new System.Drawing.Size(328, 67);
             this.button2.TabIndex = 0;
             this.button2.Text = "Medicaments";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.buttonMedicaments_Click);
             // 
             // button1
             // 

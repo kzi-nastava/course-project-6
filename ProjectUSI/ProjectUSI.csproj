@@ -84,6 +84,18 @@
         <Compile Include="Doctor\View\ScheduleWindow.Designer.cs" />
         <Compile Include="Doctor\View\UpdateAppointmentWindow.cs" />
         <Compile Include="Doctor\View\UpdateAppointmentWindow.Designer.cs" />
+        <Compile Include="Doctor\View\VerifyMedicines.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Doctor\View\VerifyMedicines.Designer.cs">
+          <DependentUpon>VerifyMedicines.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Doctor\View\VerifyMedicineWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Doctor\View\VerifyMedicineWindow.Designer.cs">
+          <DependentUpon>VerifyMedicineWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Manager\Controller\AddRoomController.cs" />
         <Compile Include="Manager\Controller\EquipmentController.cs" />
         <Compile Include="Manager\Controller\MedicineController.cs" />
@@ -198,6 +210,12 @@
         </EmbeddedResource>
         <EmbeddedResource Include="Doctor\View\ScheduleWindow.resx" />
         <EmbeddedResource Include="Doctor\View\UpdateAppointmentWindow.resx" />
+        <EmbeddedResource Include="Doctor\View\VerifyMedicines.resx">
+          <DependentUpon>VerifyMedicines.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Doctor\View\VerifyMedicineWindow.resx">
+          <DependentUpon>VerifyMedicineWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Manager\View\AddNewIngredientView.resx">
           <DependentUpon>AddNewIngredientView.cs</DependentUpon>
         </EmbeddedResource>
