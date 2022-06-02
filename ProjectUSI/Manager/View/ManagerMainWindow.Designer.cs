@@ -115,6 +115,7 @@ namespace ProjectUSI.Manager.View
             this.btnMedicaments.TabIndex = 2;
             this.btnMedicaments.Text = "Medicaments";
             this.btnMedicaments.UseVisualStyleBackColor = true;
+            this.btnMedicaments.Click += new System.EventHandler(this.btnMedicaments_Click);
             // 
             // btnRenovation
             // 

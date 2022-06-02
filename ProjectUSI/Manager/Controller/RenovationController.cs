@@ -1,11 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Windows.Forms;
+using ProjectUSI.Doctor.Model;
+using ProjectUSI.Doctor.Repository;
 using ProjectUSI.Manager.Model;
 using ProjectUSI.Manager.Repository;
 using ProjectUSI.Manager.View;
 
 namespace ProjectUSI.Manager.Controller
 {
+    
     public class RenovationController
     {
         private Renovation _model;
@@ -45,9 +51,11 @@ namespace ProjectUSI.Manager.Controller
             this._view = view;
         }
 
-        public void AddRenovation(Renovation Renovation)
+
+
+        public void AddRenovation(Renovation renovation)
         {
-            _renovationRepository.Add(Renovation);
+            _renovationRepository.Add(renovation);
         }
         
         public Room FindRoomByIndex(int index)
@@ -69,7 +77,14 @@ namespace ProjectUSI.Manager.Controller
             if (IsValidDate(startDate, endDate))
             {
                 Renovation renovation = new Renovation(firstRoom, secondRoom, startDate, endDate, type);
-                this.AddRenovation(renovation);
+                if (IsAvailableRenovation(renovation))
+                {   
+                    this.AddRenovation(renovation);
+                }
+                else
+                {
+                    MessageBox.Show("Room is not available for renovation!");
+                }
             }
             else throw new DateIsNotValidException();
         }
@@ -78,7 +93,6 @@ namespace ProjectUSI.Manager.Controller
         {
             DeselectRoomsInRenovation();
             ReturnRoomsInUse();
-            
         }
 
         public void DeselectRoomsInRenovation()
@@ -118,6 +132,13 @@ namespace ProjectUSI.Manager.Controller
             if (renovation.Type == RenovationType.Merging)
             {
                 Room newRoom = new Room(renovation.RoomToAttach.Name, renovation.RoomToAttach.Id, renovation.PrimaryRoom.Purpose, renovation.PrimaryRoom.Area + renovation.RoomToAttach.Area);
+                foreach (Equipment equipment in _mainRepository._EquipmentRepository.GetEquipment())
+                {
+                    if (equipment.DeployedIn.Id == renovation.PrimaryRoom.Id || equipment.DeployedIn.Id == renovation.RoomToAttach.Id)
+                    {
+                        _mainRepository._EquipmentRepository.UpdateEquipmentRoom(equipment, newRoom);
+                    }
+                }
                 _mainRepository._RoomRepository.InsertRooom(newRoom);
             }
         }
@@ -132,6 +153,7 @@ namespace ProjectUSI.Manager.Controller
             }
         }
         
+
         private bool IsPastDate(DateTime date)
         {
             DateTime now = DateTime.Now;
@@ -153,6 +175,40 @@ namespace ProjectUSI.Manager.Controller
                 return false;
             }
             return true;
+        }
+
+        private Dictionary<string, List<DateTime>> GetApointedTimeSlots()
+        {
+            AppointmentsRepository appointmentsRepository = new AppointmentsRepository();
+            List<Appointments> appointments = appointmentsRepository.GetAppointments();
+            Dictionary<string, List<DateTime>> bussyRooms = new Dictionary<string, List<DateTime>>();
+            foreach (Appointments appointment in appointments)
+            {
+                if (bussyRooms.ContainsKey(appointment.RoomId)) {
+                    bussyRooms[appointment.RoomId].Add(DateTime.ParseExact(appointment.Date, "dd.MM.yyyy.", CultureInfo.CurrentCulture));
+                } else
+                {
+                    bussyRooms[appointment.RoomId] = new List<DateTime>();
+                    bussyRooms[appointment.RoomId].Add(DateTime.ParseExact(appointment.Date, "dd.MM.yyyy.", CultureInfo.CurrentCulture));
+                }
+            }
+
+            return bussyRooms;
+        }
+
+        public bool IsAvailableRenovation(Renovation renovation)
+        {
+            Dictionary<string, List<DateTime>> bussyRooms = GetApointedTimeSlots();
+            if ((bussyRooms.Keys.Contains(renovation.PrimaryRoom.Id) &&
+                 bussyRooms[renovation.PrimaryRoom.Id].Contains(renovation.DateOfBegnning))|| (bussyRooms.Keys.Contains(renovation.PrimaryRoom.Id) &&
+                    bussyRooms[renovation.PrimaryRoom.Id].Contains(renovation.DateOfEnd)))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
 

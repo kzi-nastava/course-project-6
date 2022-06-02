@@ -58,5 +58,11 @@ namespace ProjectUSI.Manager.View
             RenovationWindow renovationWindow = new RenovationWindow(_MainRepository, null);
             renovationWindow.Show();
         }
+
+        private void btnMedicaments_Click(object sender, EventArgs e)
+        {
+            MedicineWindow medicineWindow = new MedicineWindow(new MedicineController(_MainRepository, null), _MainRepository);
+            medicineWindow.Show();
+        }
     }
 }

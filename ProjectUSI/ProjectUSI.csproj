@@ -86,8 +86,10 @@
         <Compile Include="Doctor\View\UpdateAppointmentWindow.Designer.cs" />
         <Compile Include="Manager\Controller\AddRoomController.cs" />
         <Compile Include="Manager\Controller\EquipmentController.cs" />
+        <Compile Include="Manager\Controller\MedicineController.cs" />
         <Compile Include="Manager\Controller\RelocationController.cs" />
         <Compile Include="Manager\Controller\RenovationController.cs" />
+        <Compile Include="Manager\Controller\RequestController.cs" />
         <Compile Include="Manager\Controller\RoomController.cs" />
         <Compile Include="Manager\Model\Equipment.cs" />
         <Compile Include="Manager\Model\EquipmentType.cs" />
@@ -96,24 +98,57 @@
         <Compile Include="Manager\Model\Relocation.cs" />
         <Compile Include="Manager\Model\Renovation.cs" />
         <Compile Include="Manager\Model\RenovationType.cs" />
+        <Compile Include="Manager\Model\Request.cs" />
         <Compile Include="Manager\Model\Room.cs" />
         <Compile Include="Manager\Model\RoomPurpose.cs" />
         <Compile Include="Manager\Repository\EquipmentRepository.cs" />
         <Compile Include="Manager\Repository\MainRepository.cs" />
+        <Compile Include="Manager\Repository\MedicineRepository.cs" />
         <Compile Include="Manager\Repository\RelocationRepository.cs" />
         <Compile Include="Manager\Repository\RenovationRepository.cs" />
+        <Compile Include="Manager\Repository\RequestRepository.cs" />
         <Compile Include="Manager\Repository\RoomRepository.cs" />
+        <Compile Include="Manager\View\AddNewIngredientView.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Manager\View\AddNewIngredientView.Designer.cs">
+          <DependentUpon>AddNewIngredientView.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Manager\View\AddNewMedicineWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Manager\View\AddNewMedicineWindow.Designer.cs">
+          <DependentUpon>AddNewMedicineWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Manager\View\AddRoomWindow.cs">
           <SubType>Form</SubType>
         </Compile>
         <Compile Include="Manager\View\AddRoomWindow.Designer.cs">
           <DependentUpon>AddRoomWindow.cs</DependentUpon>
         </Compile>
+        <Compile Include="Manager\View\ChangeIngredientsWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Manager\View\ChangeIngredientsWindow.Designer.cs">
+          <DependentUpon>ChangeIngredientsWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Manager\View\ConfirmRenovationWindow.cs">
           <SubType>Form</SubType>
         </Compile>
         <Compile Include="Manager\View\ConfirmRenovationWindow.Designer.cs">
           <DependentUpon>ConfirmRenovationWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Manager\View\CRUDIngredientsView.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Manager\View\CRUDIngredientsView.Designer.cs">
+          <DependentUpon>CRUDIngredientsView.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Manager\View\MedicineWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Manager\View\MedicineWindow.Designer.cs">
+          <DependentUpon>MedicineWindow.cs</DependentUpon>
         </Compile>
         <Compile Include="Manager\View\RelocateWindow.cs">
           <SubType>Form</SubType>
@@ -134,6 +169,12 @@
         </Compile>
         <Compile Include="Manager\View\RenovationWindow.Designer.cs">
           <DependentUpon>RenovationWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Manager\View\RequestWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Manager\View\RequestWindow.Designer.cs">
+          <DependentUpon>RequestWindow.cs</DependentUpon>
         </Compile>
         <Compile Include="Manager\View\RoomsWindow.cs" />
         <Compile Include="Manager\View\RoomsWindow.Designer.cs" />
@@ -157,16 +198,31 @@
         </EmbeddedResource>
         <EmbeddedResource Include="Doctor\View\ScheduleWindow.resx" />
         <EmbeddedResource Include="Doctor\View\UpdateAppointmentWindow.resx" />
+        <EmbeddedResource Include="Manager\View\AddNewIngredientView.resx">
+          <DependentUpon>AddNewIngredientView.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Manager\View\AddNewMedicineWindow.resx">
+          <DependentUpon>AddNewMedicineWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Manager\View\AddRoomWindow.resx">
           <DependentUpon>AddRoomWindow.cs</DependentUpon>
         </EmbeddedResource>
+        <EmbeddedResource Include="Manager\View\ChangeIngredientsWindow.resx">
+          <DependentUpon>ChangeIngredientsWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Manager\View\ConfirmRenovationWindow.resx">
           <DependentUpon>ConfirmRenovationWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Manager\View\CRUDIngredientsView.resx">
+          <DependentUpon>CRUDIngredientsView.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Manager\View\EquipmentWindow.resx">
           <DependentUpon>EquipmentWindow.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Manager\View\ManagerMainWindow.resx" />
+        <EmbeddedResource Include="Manager\View\MedicineWindow.resx">
+          <DependentUpon>MedicineWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Manager\View\RelocateWindow.resx">
           <DependentUpon>RelocateWindow.cs</DependentUpon>
         </EmbeddedResource>
@@ -204,7 +260,9 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="Data\Equipment.json" />
+      <Content Include="Data\Medicaments.json" />
       <Content Include="Data\Medicine.json" />
+      <Content Include="Data\MedicineRequests.json" />
       <Content Include="Data\Relocations.json" />
       <Content Include="Data\Renovation.json" />
       <Content Include="Data\Rooms.json" />

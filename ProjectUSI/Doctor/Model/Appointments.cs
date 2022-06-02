@@ -1,4 +1,3 @@
-
 namespace ProjectUSI.Doctor.Model
 {
     /// <summary>
