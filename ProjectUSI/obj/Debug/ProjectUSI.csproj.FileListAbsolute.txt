@@ -45,3 +45,8 @@ C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.csproj.GenerateRe
 C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.csproj.CoreCompileInputs.cache
 C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.exe
 C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.pdb
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.MedicineWindow.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.ChangeIngredientsWindow.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.CRUDMedicineView.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.AddNewIngredientView.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.AddNewMedicineWindow.resources

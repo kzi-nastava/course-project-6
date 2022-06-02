@@ -1,29 +1,30 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace ProjectUSI.Manager.Model
 {
-    public class Medicine
+    public class Request
     {
-        public Medicine()
+        public Request()
         {
             Name = "";
             Ingredients = new List<String>();
             WayOfUse = "";
+            Status = Status;
         }
 
-        public Medicine(string name, List<String> ingredients, string wayOfUse)
+        public Request(string name, List<String> ingredients, string wayOfUse, Status status)
         {
             Name = name;
             Ingredients = ingredients;
             WayOfUse = wayOfUse;
+            Status = status;
         }
-        
         public string Name { get; set; }
         public List<String> Ingredients { get; set; }
         public string WayOfUse { get; set; }
-
+        public Status Status { get; set; }
+        
         private String IngredientsToString()
         {
             String ingredients = "";
@@ -34,10 +35,16 @@ namespace ProjectUSI.Manager.Model
 
             return ingredients;
         }
-
         public override string ToString()
         {
-            return Name + "\t" + IngredientsToString() + "\t" + WayOfUse;
+            return Name + "\t" + IngredientsToString() + "\t" + WayOfUse + "\t" + Status;
         }
+    }
+
+    public enum Status
+    {
+        NaCekanju,
+        Prihvacen,
+        Odbijen
     }
 }
