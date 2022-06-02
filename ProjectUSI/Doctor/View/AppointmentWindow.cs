@@ -16,6 +16,7 @@ namespace ProjectUSI.Doctor.View
     {
         private MedicalRecordRepository _medicalRecordRepository;
         public MedicalRecordController _controller;
+        public ReferralRepository _referralRepository;
 
         public AppointmentWindow(String email, MedicalRecordRepository medicalRecordRepository,
             MedicalRecordController medicalRecordController)
@@ -80,6 +81,20 @@ namespace ProjectUSI.Doctor.View
             
             MessageBox.Show("Medical record is successfully modified.", "Success!", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+        }
+        
+        private void buttonPrescription_Click(object sender, EventArgs e)
+        {
+            PrescriptionWindow prescriptionWindow = new PrescriptionWindow();
+            prescriptionWindow.Show();
+        }
+
+        private void referral_Click(object sender, EventArgs e)
+        {
+            string email = textBox3.Text;
+            ReferralWindow referralWindow = new ReferralWindow(email, _medicalRecordRepository, _referralRepository,
+                new ReferralController(new Referral(), null,  _referralRepository));
+            referralWindow.Show();
         }
     }
 }
