@@ -5,6 +5,9 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using ProjectUSI.Doctor.Model;
 using ProjectUSI.Doctor.Repository;
+using ProjectUSI.Manager.Controller;
+using ProjectUSI.Manager.Model;
+using ProjectUSI.Manager.Repository;
 
 namespace ProjectUSI.Doctor.View
 {
@@ -16,12 +19,33 @@ namespace ProjectUSI.Doctor.View
         
         private AppointmentsRepository _appointmentsRepository;
 
-        public CRUDAppointmentWindow(AppointmentsRepository appointmentsRepository)
+        private RoomRepository _roomRepository = new RoomRepository();
+        public CRUDAppointmentWindow(String type, AppointmentsRepository appointmentsRepository)
         {
             _appointmentsRepository = appointmentsRepository;
             InitializeComponent();
+            textBoxType.Text = type;
+            InitComboBox();
         }
-
+        private void InitComboBox()
+        {
+            
+            List<Room> rooms = _roomRepository.GetRooms();
+            List<String> roomIds = new List<String>();
+            foreach (Room room in rooms)
+            {
+                if (textBoxType.Text == "operation" && room.Purpose == RoomPurpose.OperationRoom)
+                {
+                    roomIds.Add(room.Id);
+                }
+                
+                if (textBoxType.Text == "check up" && room.Purpose == RoomPurpose.ExaminationRoom)
+                {
+                    roomIds.Add(room.Id);
+                }
+            }
+            comboBox1.DataSource = roomIds;
+        }
         private void buttonCreateApp_Click(object sender, EventArgs e)
         {
             Appointments newAppointments = new Appointments();
@@ -34,7 +58,8 @@ namespace ProjectUSI.Doctor.View
             newAppointments.Date = textBoxDate.Text;
             newAppointments.Time = textBoxStartTime.Text;
             newAppointments.EndTime = textBoxEndTime.Text;
-            
+            newAppointments.RoomId = (string) comboBox1.SelectedItem;
+
             List<Appointments> appointments = _appointmentsRepository.GetAppointments();
             appointments.Add(newAppointments);
             
@@ -43,6 +68,11 @@ namespace ProjectUSI.Doctor.View
             
             MessageBox.Show("Appointment is successfully created.","Success!", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox1.Text = comboBox1.SelectedText;
         }
     }
 }

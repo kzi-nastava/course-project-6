@@ -15,15 +15,13 @@ namespace ProjectUSI.Doctor.View
     public partial class AppointmentWindow : Form
     {
         private MedicalRecordRepository _medicalRecordRepository;
-        public MedicalRecordController _controller;
         public ReferralRepository _referralRepository;
+        private Appointments _appointment;
 
-        public AppointmentWindow(String email, MedicalRecordRepository medicalRecordRepository,
-            MedicalRecordController medicalRecordController)
+        public AppointmentWindow(String email, MedicalRecordRepository medicalRecordRepository, Appointments appointment)
         {
             _medicalRecordRepository = medicalRecordRepository;
-            _controller = medicalRecordController;
-
+            _appointment = appointment;
             InitializeComponent();
             InitComponents(email);
 
@@ -96,6 +94,12 @@ namespace ProjectUSI.Doctor.View
             ReferralWindow referralWindow = new ReferralWindow(email, _medicalRecordRepository, _referralRepository,
                 new ReferralController(new Referral(), null,  _referralRepository));
             referralWindow.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UsedEquimpentWindow usedEquimpentWindow = new UsedEquimpentWindow(_appointment);
+            usedEquimpentWindow.Show();
         }
     }
 }
