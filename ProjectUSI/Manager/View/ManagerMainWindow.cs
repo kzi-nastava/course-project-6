@@ -64,5 +64,11 @@ namespace ProjectUSI.Manager.View
             MedicineWindow medicineWindow = new MedicineWindow(new MedicineController(_MainRepository, null), _MainRepository);
             medicineWindow.Show();
         }
+
+        private void btnRejectedMedicaments_Click(object sender, EventArgs e)
+        {
+            RequestWindow requestWindow = new RequestWindow();
+            requestWindow.Show();
+        }
     }
 }

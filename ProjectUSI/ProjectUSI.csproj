@@ -144,6 +144,12 @@
         <Compile Include="Manager\View\ChangeIngredientsWindow.Designer.cs">
           <DependentUpon>ChangeIngredientsWindow.cs</DependentUpon>
         </Compile>
+        <Compile Include="Manager\View\ChangeRequestWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Manager\View\ChangeRequestWindow.Designer.cs">
+          <DependentUpon>ChangeRequestWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Manager\View\ConfirmRenovationWindow.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -228,6 +234,9 @@
         <EmbeddedResource Include="Manager\View\ChangeIngredientsWindow.resx">
           <DependentUpon>ChangeIngredientsWindow.cs</DependentUpon>
         </EmbeddedResource>
+        <EmbeddedResource Include="Manager\View\ChangeRequestWindow.resx">
+          <DependentUpon>ChangeRequestWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Manager\View\ConfirmRenovationWindow.resx">
           <DependentUpon>ConfirmRenovationWindow.cs</DependentUpon>
         </EmbeddedResource>
@@ -246,6 +255,9 @@
         </EmbeddedResource>
         <EmbeddedResource Include="Manager\View\RenovationWindow.resx">
           <DependentUpon>RenovationWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Manager\View\RequestWindow.resx">
+          <DependentUpon>RequestWindow.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Manager\View\RoomsWindow.resx">
           <DependentUpon>RoomsWindow.cs</DependentUpon>
