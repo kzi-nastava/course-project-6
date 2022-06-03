@@ -28,11 +28,7 @@ namespace ProjectUSI.Doctor.View
             _medicalRecordRepository = medicalRecordRepository;
             
             InitializeComponent();
-            for (int i = 0; i < _appointmentsRepository.GetAppointments().Count; i++)
-            {
-                appointments.Items.Add(_appointmentsRepository.GetAppointments().ElementAt(i).ToString());
-                
-            }
+            InitListBox();
 
         }
 
@@ -72,10 +68,11 @@ namespace ProjectUSI.Doctor.View
             try
             {
                 int index = appointments.SelectedIndex;
+                Appointments appointment;
+                appointment = _appointmentsRepository.GetAppointments().ElementAt(index);
                 Appointments app = _appointmentsRepository.GetAppointments()[index];
-                AppointmentWindow appointment = new AppointmentWindow(app.PatientEmail, _medicalRecordRepository,
-                    new MedicalRecordController(new MedicalRecord(), null, _medicalRecordRepository));
-                appointment.ShowDialog();
+                AppointmentWindow appointmentWindow = new AppointmentWindow(app.PatientEmail, _medicalRecordRepository, appointment);
+                appointmentWindow.ShowDialog();
             }
             
             catch (ArgumentOutOfRangeException exception)
@@ -146,6 +143,12 @@ namespace ProjectUSI.Doctor.View
                 MessageBox.Show("Please select which appointment you want to change.", caption:"Warning!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            appointments.Items.Clear();
+            InitListBox();
         }
     }
 }

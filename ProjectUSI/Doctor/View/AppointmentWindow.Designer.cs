@@ -54,6 +54,7 @@ namespace ProjectUSI.Doctor.View
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.referral = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -272,7 +273,7 @@ namespace ProjectUSI.Doctor.View
             this.button2.BackColor = System.Drawing.SystemColors.Info;
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button2.Location = new System.Drawing.Point(528, 373);
+            this.button2.Location = new System.Drawing.Point(773, 300);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(210, 54);
             this.button2.TabIndex = 22;
@@ -285,7 +286,7 @@ namespace ProjectUSI.Doctor.View
             this.referral.BackColor = System.Drawing.SystemColors.Info;
             this.referral.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.referral.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.referral.Location = new System.Drawing.Point(773, 373);
+            this.referral.Location = new System.Drawing.Point(773, 360);
             this.referral.Name = "referral";
             this.referral.Size = new System.Drawing.Size(211, 53);
             this.referral.TabIndex = 23;
@@ -293,12 +294,26 @@ namespace ProjectUSI.Doctor.View
             this.referral.UseVisualStyleBackColor = false;
             this.referral.Click += new System.EventHandler(this.referral_Click);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.Info;
+            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button3.Location = new System.Drawing.Point(450, 360);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(211, 53);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "Finish appointment";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // AppointmentWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(992, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.referral);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox20);
@@ -327,6 +342,8 @@ namespace ProjectUSI.Doctor.View
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button referral;
 
         private System.Windows.Forms.Button button2;

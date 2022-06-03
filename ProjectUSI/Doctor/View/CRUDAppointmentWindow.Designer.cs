@@ -48,6 +48,8 @@ namespace ProjectUSI.Doctor.View
             this.textBoxEndTime = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBoxId
@@ -222,7 +224,7 @@ namespace ProjectUSI.Doctor.View
             this.button1.BackColor = System.Drawing.SystemColors.Info;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Location = new System.Drawing.Point(302, 435);
+            this.button1.Location = new System.Drawing.Point(581, 445);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(216, 58);
             this.button1.TabIndex = 16;
@@ -230,12 +232,34 @@ namespace ProjectUSI.Doctor.View
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.buttonCreateApp_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(206, 425);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(186, 28);
+            this.comboBox1.TabIndex = 17;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.textBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.textBox1.Location = new System.Drawing.Point(10, 425);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(187, 24);
+            this.textBox1.TabIndex = 18;
+            this.textBox1.Text = "Room id:";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // CRUDAppointmentWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(823, 532);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBoxEndTime);
@@ -260,6 +284,10 @@ namespace ProjectUSI.Doctor.View
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.TextBox textBox1;
+
+        private System.Windows.Forms.ComboBox comboBox1;
 
         private System.Windows.Forms.TextBox textBoxEndTime;
 
