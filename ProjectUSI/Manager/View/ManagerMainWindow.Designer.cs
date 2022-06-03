@@ -92,6 +92,7 @@ namespace ProjectUSI.Manager.View
             this.btnRejectedMedicaments.TabIndex = 5;
             this.btnRejectedMedicaments.Text = "Rejected medicaments";
             this.btnRejectedMedicaments.UseVisualStyleBackColor = true;
+            this.btnRejectedMedicaments.Click += new System.EventHandler(this.btnRejectedMedicaments_Click);
             // 
             // btnEquipmentReviw
             // 

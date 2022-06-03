@@ -43,7 +43,7 @@ namespace ProjectUSI.Doctor.View
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(31, 79);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(479, 276);
+            this.listBox1.Size = new System.Drawing.Size(716, 276);
             this.listBox1.TabIndex = 0;
             // 
             // viewMed
@@ -51,9 +51,9 @@ namespace ProjectUSI.Doctor.View
             this.viewMed.BackColor = System.Drawing.SystemColors.Info;
             this.viewMed.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.viewMed.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.viewMed.Location = new System.Drawing.Point(536, 301);
+            this.viewMed.Location = new System.Drawing.Point(450, 384);
             this.viewMed.Name = "viewMed";
-            this.viewMed.Size = new System.Drawing.Size(225, 54);
+            this.viewMed.Size = new System.Drawing.Size(297, 54);
             this.viewMed.TabIndex = 1;
             this.viewMed.Text = "Reject medicine";
             this.viewMed.UseVisualStyleBackColor = false;
@@ -64,9 +64,9 @@ namespace ProjectUSI.Doctor.View
             this.accept.BackColor = System.Drawing.SystemColors.Info;
             this.accept.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.accept.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.accept.Location = new System.Drawing.Point(537, 225);
+            this.accept.Location = new System.Drawing.Point(31, 384);
             this.accept.Name = "accept";
-            this.accept.Size = new System.Drawing.Size(224, 54);
+            this.accept.Size = new System.Drawing.Size(297, 54);
             this.accept.TabIndex = 2;
             this.accept.Text = "Accept medicine";
             this.accept.UseVisualStyleBackColor = false;
@@ -77,7 +77,7 @@ namespace ProjectUSI.Doctor.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 465);
             this.Controls.Add(this.accept);
             this.Controls.Add(this.viewMed);
             this.Controls.Add(this.listBox1);

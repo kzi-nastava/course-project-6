@@ -59,3 +59,8 @@ C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\P
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.RenovationWindow.resources
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.VerifyMedicines.resources
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.VerifyMedicineWindow.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.ReferralWindow.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.VerifyMedicines.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.VerifyMedicineWindow.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.RequestWindow.resources
+C:\Users\ANJA\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.ChangeRequestWindow.resources

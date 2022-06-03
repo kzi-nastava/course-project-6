@@ -32,7 +32,6 @@ namespace ProjectUSI.Doctor.View
             for (int i = 0; i < _requestRepository.GetRequests().Count; i++)
             {
                 listBox1.Items.Add(_requestRepository.GetRequests().ElementAt(i).ToString());
-                
             }
         }
 
@@ -44,9 +43,7 @@ namespace ProjectUSI.Doctor.View
                 Request req = _requestRepository.GetRequests()[index];
                 VerifyMedicineWindow verifyMedicinesWindow = new VerifyMedicineWindow(req, _requestRepository);
                 verifyMedicinesWindow.Show();
-
             }
-            
             catch (ArgumentOutOfRangeException exception)
             {
                 MessageBox.Show("Please select which request you want to reject.", "Warning!",
