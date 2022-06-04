@@ -11,20 +11,19 @@ using ProjectUSI.Manager.Repository;
 namespace ProjectUSI.Manager.View
 {
 
-    public partial class CRUDMedicineView : Form
+    public partial class CRUDIngredientsView : Form
     {
         private MedicineRepository _medicineRepository;
+        private MainRepository _mainRepository;
         private Medicine _medicine;
 
-        public CRUDMedicineView(Medicine medicine, MedicineRepository medicineRepository)
+        public CRUDIngredientsView(Medicine medicine, MainRepository mainRepository)
         {
-            _medicineRepository = medicineRepository;
+            _mainRepository = mainRepository;
+            _medicineRepository = mainRepository.MedicineRepository;
             _medicine = medicine;
             InitializeComponent();
-            for (int i = 0; i < _medicine.Ingredients.Count; i++)
-            {
-                listBox1.Items.Add(_medicine.Ingredients.ElementAt(i).ToString());
-            }
+            InitListBox();
         }
 
         public void InitListBox()
@@ -36,20 +35,15 @@ namespace ProjectUSI.Manager.View
             
         }
 
-        private void delIng_Click(object sender, EventArgs e)
+        private void DeleteClick(object sender, EventArgs e)
         {
             string item = (string)listBox1.SelectedItem;
             if (item != null)
             {
                 _medicine.Ingredients.Remove(item);
-                
+                _medicineRepository.Save();
                 listBox1.Items.Clear();
                 InitListBox();
-
-                List <Medicine> medicines = _medicineRepository.GetMedicine();
-
-                File.WriteAllText(@"..\..\Data\Medicaments.json",
-                    JsonConvert.SerializeObject(medicines));
             
                 MessageBox.Show("Selected ingredient is successfully deleted.","Success!",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -62,13 +56,12 @@ namespace ProjectUSI.Manager.View
             
         }
 
-        private void UpdateIng_Click(object sender, EventArgs e)
+        private void UpdateClick(object sender, EventArgs e)
         {
             string item = (string)listBox1.SelectedItem;
             if (item != null)
             {
-                ChangeIngredientsWindow changeIngredientsWindow =
-                    new ChangeIngredientsWindow(item, _medicine, _medicineRepository);
+                ChangeIngredientsWindow changeIngredientsWindow = new ChangeIngredientsWindow(item, _medicine, _mainRepository);
                 changeIngredientsWindow.Show();
                 listBox1.Items.Clear();
                 InitListBox();
@@ -80,7 +73,7 @@ namespace ProjectUSI.Manager.View
             }
         }
 
-        private void AddIng_Click(object sender, EventArgs e)
+        private void AddClick(object sender, EventArgs e)
         {
             AddNewIngredientView newIngredientView = new AddNewIngredientView(_medicine, _medicineRepository);
             newIngredientView.Show();
@@ -88,7 +81,7 @@ namespace ProjectUSI.Manager.View
             InitListBox();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void RefreshClick(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
             InitListBox();

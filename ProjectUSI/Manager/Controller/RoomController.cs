@@ -16,7 +16,7 @@ namespace ProjectUSI.Manager.Controller
         {
             this._model = model;
             this._mainRepository = mainRepository;
-            this._roomRepository = _mainRepository._RoomRepository;
+            this._roomRepository = _mainRepository.RoomRepository;
             this._view = view;
         }
         

@@ -15,13 +15,13 @@ namespace ProjectUSI.Manager.View
         public EquipmentController _controller;
         public EquipmentWindow(MainRepository mainRepository, EquipmentController equipmentController)
         {
-           _equipmentRepository = mainRepository._EquipmentRepository;
+           _equipmentRepository = mainRepository.EquipmentRepository;
             _controller = equipmentController;
             _mainRepository = mainRepository;
             
             InitializeComponent();
             InitComboBoxes();
-            InitListBox(_mainRepository._EquipmentRepository.GetEquipment());
+            InitListBox(_mainRepository.EquipmentRepository.GetEquipment());
         }
 
         private void InitComboBoxes()
@@ -38,7 +38,7 @@ namespace ProjectUSI.Manager.View
         {
             for (int i = 0; i < equipment.Count; i++)
             {
-                listBox1.Items.Add(_mainRepository._EquipmentRepository.GetEquipment().ElementAt(i).ToString());
+                listBox1.Items.Add(_mainRepository.EquipmentRepository.GetEquipment().ElementAt(i).ToString());
             }
         }
         
@@ -60,7 +60,7 @@ namespace ProjectUSI.Manager.View
                 }
             }
             else 
-                InitListBox(_mainRepository._EquipmentRepository.GetEquipment());
+                InitListBox(_mainRepository.EquipmentRepository.GetEquipment());
             listBox1.EndUpdate();             
         }
 

@@ -8,9 +8,10 @@ namespace ProjectUSI.Manager.View
 {
     public partial class RequestWindow : Form
     {
-        private RequestRepository _requestRepository = new RequestRepository();
-        public RequestWindow()
+        private RequestRepository _requestRepository;
+        public RequestWindow(MainRepository mainRepository)
         {
+            _requestRepository = mainRepository.RequestRepository;
             InitializeComponent();
             InitListBox();
         }
@@ -32,8 +33,14 @@ namespace ProjectUSI.Manager.View
             {
                 int index = listBox1.SelectedIndex;
                 Request req = _requestRepository.GetRequests()[index];
+                _requestRepository.DeleteRequest(req);
+                listBox1.Items.Clear();
+                InitListBox();
+                _requestRepository.Save();
                 ChangeRequestWindow changeRequestWindow = new ChangeRequestWindow(req, _requestRepository);
                 changeRequestWindow.Show();
+                
+                
             }
             catch (ArgumentOutOfRangeException exception)
             {
@@ -48,7 +55,7 @@ namespace ProjectUSI.Manager.View
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
             InitListBox();

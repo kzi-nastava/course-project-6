@@ -47,7 +47,7 @@ namespace ProjectUSI.Manager.Controller
         {
             this._model = model;
             this._mainRepository = mainRepository;
-            this._renovationRepository = _mainRepository._RenovationRepository;
+            this._renovationRepository = _mainRepository.RenovationRepository;
             this._view = view;
         }
 
@@ -60,7 +60,7 @@ namespace ProjectUSI.Manager.Controller
         
         public Room FindRoomByIndex(int index)
         {
-            Room room = _mainRepository._RoomRepository.GetRooms()[index];
+            Room room = _mainRepository.RoomRepository.GetRooms()[index];
             if (room != null)
             {
                 return room;
@@ -101,7 +101,7 @@ namespace ProjectUSI.Manager.Controller
             {
                 if (IsPastDate(renovation.DateOfBegnning))
                 {
-                    _mainRepository._RoomRepository.DeleteRoom(renovation.PrimaryRoom);
+                    _mainRepository.RoomRepository.DeleteRoom(renovation.PrimaryRoom);
                 }
             }
         }
@@ -122,7 +122,7 @@ namespace ProjectUSI.Manager.Controller
                             break;
                     }
                     
-                    _mainRepository._RoomRepository.DeleteRoom(renovation.PrimaryRoom);
+                    _mainRepository.RoomRepository.DeleteRoom(renovation.PrimaryRoom);
                 }
             }
         }
@@ -132,14 +132,14 @@ namespace ProjectUSI.Manager.Controller
             if (renovation.Type == RenovationType.Merging)
             {
                 Room newRoom = new Room(renovation.RoomToAttach.Name, renovation.RoomToAttach.Id, renovation.PrimaryRoom.Purpose, renovation.PrimaryRoom.Area + renovation.RoomToAttach.Area);
-                foreach (Equipment equipment in _mainRepository._EquipmentRepository.GetEquipment())
+                foreach (Equipment equipment in _mainRepository.EquipmentRepository.GetEquipment())
                 {
                     if (equipment.DeployedIn.Id == renovation.PrimaryRoom.Id || equipment.DeployedIn.Id == renovation.RoomToAttach.Id)
                     {
-                        _mainRepository._EquipmentRepository.UpdateEquipmentRoom(equipment, newRoom);
+                        _mainRepository.EquipmentRepository.UpdateEquipmentRoom(equipment, newRoom);
                     }
                 }
-                _mainRepository._RoomRepository.InsertRooom(newRoom);
+                _mainRepository.RoomRepository.InsertRooom(newRoom);
             }
         }
         
@@ -148,8 +148,8 @@ namespace ProjectUSI.Manager.Controller
             if (renovation.Type == RenovationType.Merging)
             {
                 renovation.PrimaryRoom.Area = renovation.RoomToAttach.Area;
-                _mainRepository._RoomRepository.InsertRooom(renovation.PrimaryRoom);
-                _mainRepository._RoomRepository.InsertRooom(renovation.RoomToAttach);
+                _mainRepository.RoomRepository.InsertRooom(renovation.PrimaryRoom);
+                _mainRepository.RoomRepository.InsertRooom(renovation.RoomToAttach);
             }
         }
         

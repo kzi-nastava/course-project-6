@@ -16,7 +16,7 @@ namespace ProjectUSI.Manager.Controller
         {
             this._model = model;
             this._mainRepository = mainRepository;
-            this._roomRepository = mainRepository._RoomRepository;
+            this._roomRepository = mainRepository.RoomRepository;
             this._view = view;
         }
         private void ResetForm()
@@ -28,16 +28,8 @@ namespace ProjectUSI.Manager.Controller
 
         public void Submit(string name, string id, RoomPurpose roomPurpose, int area)
         {
-            Room room = new Room()
-            {
-                Name = name,
-                Id = id,
-                Purpose = roomPurpose,
-                Area = area
-            };
+            Room room = new Room(name, id, roomPurpose, area);
             _roomRepository.InsertRooom(room);
-            
-            
         }
     }
 }

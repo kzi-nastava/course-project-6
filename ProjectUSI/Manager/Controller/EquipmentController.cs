@@ -31,7 +31,7 @@ namespace ProjectUSI.Manager.Controller
             List<Equipment> temp = new List<Equipment>();
             if (!roomPurpose.Equals(RoomPurpose.None))
             {
-                foreach (Equipment equipment in _MainRepository._EquipmentRepository.GetEquipment())
+                foreach (Equipment equipment in _MainRepository.EquipmentRepository.GetEquipment())
                 {
                     if (equipment.DeployedIn.Purpose.Equals(roomPurpose))
                     {
@@ -41,7 +41,7 @@ namespace ProjectUSI.Manager.Controller
             }
             else if (!equipmentType.Equals(EquipmentType.None))
             {
-                foreach (Equipment equipment in _MainRepository._EquipmentRepository.GetEquipment())
+                foreach (Equipment equipment in _MainRepository.EquipmentRepository.GetEquipment())
                 {
                     if (equipment.EquipmentType.Equals(equipmentType))
                     {
@@ -56,7 +56,7 @@ namespace ProjectUSI.Manager.Controller
                 {
                     case 1:
                     {
-                        foreach (Equipment equipment in _MainRepository._EquipmentRepository.GetEquipment())
+                        foreach (Equipment equipment in _MainRepository.EquipmentRepository.GetEquipment())
                         {
                             if (equipment.Quantity == 0)
                             {
@@ -68,7 +68,7 @@ namespace ProjectUSI.Manager.Controller
                     }
                     case 2:
                     {
-                        foreach (Equipment equipment in _MainRepository._EquipmentRepository.GetEquipment())
+                        foreach (Equipment equipment in _MainRepository.EquipmentRepository.GetEquipment())
                         {
                             if (equipment.Quantity < 10)
                             {
@@ -80,7 +80,7 @@ namespace ProjectUSI.Manager.Controller
                     }
                     case 3:
                     {
-                        foreach (Equipment equipment in _MainRepository._EquipmentRepository.GetEquipment())
+                        foreach (Equipment equipment in _MainRepository.EquipmentRepository.GetEquipment())
                         {
                             if (equipment.Quantity > 10)
                             {
@@ -97,7 +97,7 @@ namespace ProjectUSI.Manager.Controller
             }
             else
             {
-                temp = _MainRepository._EquipmentRepository.GetEquipment();
+                temp = _MainRepository.EquipmentRepository.GetEquipment();
             }
 
             return temp;
@@ -105,7 +105,7 @@ namespace ProjectUSI.Manager.Controller
 
         public void Relocate(Equipment equipment)
         {
-            this._MainRepository._EquipmentRepository.DecreaseQuantity(equipment.Id);
+            this._MainRepository.EquipmentRepository.DecreaseQuantity(equipment.Id);
         }
         
 

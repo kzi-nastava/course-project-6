@@ -9,7 +9,7 @@ namespace ProjectUSI.Manager.View
     public partial class AddRoomWindow : Form
     {
         private MainRepository _MainRepository;
-        public AddRoomController _controller;
+        private AddRoomController _controller;
         public AddRoomWindow(MainRepository mainRepository, Room room)
         {
             _MainRepository = mainRepository;
@@ -31,14 +31,9 @@ namespace ProjectUSI.Manager.View
         {
             try
             {
-                string name = txtBoxNameOfRoom.Text;
-                string id = txtBoxIdOfRoom.Text;
-                RoomPurpose purpose = (RoomPurpose) cbPurpose.SelectedItem;
-                int area = Int32.Parse(txtBoxArea.Text);
-                _controller.Submit(name, id, purpose, area);
+                _controller.Submit(txtBoxNameOfRoom.Text, txtBoxIdOfRoom.Text, (RoomPurpose) cbPurpose.SelectedItem, Int32.Parse(txtBoxArea.Text));
                 this.Dispose(false);
-                RoomsWindow roomsWindow =
-                    new RoomsWindow(_MainRepository, new RoomController(new Room(), null, _MainRepository));
+                RoomsWindow roomsWindow = new RoomsWindow(_MainRepository, new RoomController(new Room(), null, _MainRepository));
                 roomsWindow.Show();
             }
             catch (FormatException)

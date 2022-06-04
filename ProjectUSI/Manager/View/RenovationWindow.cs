@@ -15,7 +15,7 @@ namespace ProjectUSI.Manager.View
         public RenovationWindow(MainRepository mainRepository, RenovationController renovationController)
         {
             _mainRepository = mainRepository;
-            _renovations = _mainRepository._RenovationRepository.GetRenovation();
+            _renovations = _mainRepository.RenovationRepository.GetRenovation();
             _controller = renovationController;
             InitializeComponent();
             InitListBox(_renovations);

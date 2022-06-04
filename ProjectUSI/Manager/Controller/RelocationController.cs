@@ -15,9 +15,9 @@ namespace ProjectUSI.Manager.Controller
 
         public RelocationController(Relocation model, RelocateWindow view, MainRepository mainRepository)
         {
-            this._model = model;
             this._mainRepository = mainRepository;
-            this._relocateRepository = _mainRepository._RelocationRepository;
+            this._model = model;
+            this._relocateRepository = _mainRepository.RelocationRepository;
             this._view = view;
         }
 

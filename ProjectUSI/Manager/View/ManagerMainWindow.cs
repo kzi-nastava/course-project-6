@@ -67,7 +67,7 @@ namespace ProjectUSI.Manager.View
 
         private void btnRejectedMedicaments_Click(object sender, EventArgs e)
         {
-            RequestWindow requestWindow = new RequestWindow();
+            RequestWindow requestWindow = new RequestWindow(_MainRepository);
             requestWindow.Show();
         }
     }

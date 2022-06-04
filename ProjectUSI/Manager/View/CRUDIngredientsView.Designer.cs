@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace ProjectUSI.Manager.View
 {
-    partial class CRUDMedicineView
+    partial class CRUDIngredientsView
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,10 @@ namespace ProjectUSI.Manager.View
         private void InitializeComponent()
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.AddIng = new System.Windows.Forms.Button();
-            this.UpdateIng = new System.Windows.Forms.Button();
-            this.delIng = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddIngredient = new System.Windows.Forms.Button();
+            this.btnChangeIngredient = new System.Windows.Forms.Button();
+            this.btnDeleteIngredient = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -47,77 +47,77 @@ namespace ProjectUSI.Manager.View
             this.listBox1.Size = new System.Drawing.Size(341, 292);
             this.listBox1.TabIndex = 0;
             // 
-            // AddIng
+            // btnAddIngredient
             // 
-            this.AddIng.Font = new System.Drawing.Font("Orbitron", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.AddIng.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.AddIng.Location = new System.Drawing.Point(474, 95);
-            this.AddIng.Name = "AddIng";
-            this.AddIng.Size = new System.Drawing.Size(248, 58);
-            this.AddIng.TabIndex = 1;
-            this.AddIng.Text = "Add new ingredient";
-            this.AddIng.UseVisualStyleBackColor = true;
-            this.AddIng.Click += new System.EventHandler(this.AddIng_Click);
+            this.btnAddIngredient.Font = new System.Drawing.Font("Orbitron", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnAddIngredient.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnAddIngredient.Location = new System.Drawing.Point(474, 95);
+            this.btnAddIngredient.Name = "btnAddIngredient";
+            this.btnAddIngredient.Size = new System.Drawing.Size(248, 58);
+            this.btnAddIngredient.TabIndex = 1;
+            this.btnAddIngredient.Text = "Add new ingredient";
+            this.btnAddIngredient.UseVisualStyleBackColor = true;
+            this.btnAddIngredient.Click += new System.EventHandler(this.AddClick);
             // 
-            // UpdateIng
+            // btnChangeIngredient
             // 
-            this.UpdateIng.Font = new System.Drawing.Font("Orbitron", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.UpdateIng.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.UpdateIng.Location = new System.Drawing.Point(474, 186);
-            this.UpdateIng.Name = "UpdateIng";
-            this.UpdateIng.Size = new System.Drawing.Size(248, 59);
-            this.UpdateIng.TabIndex = 2;
-            this.UpdateIng.Text = "Change ingredient";
-            this.UpdateIng.UseVisualStyleBackColor = true;
-            this.UpdateIng.Click += new System.EventHandler(this.UpdateIng_Click);
+            this.btnChangeIngredient.Font = new System.Drawing.Font("Orbitron", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnChangeIngredient.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnChangeIngredient.Location = new System.Drawing.Point(474, 186);
+            this.btnChangeIngredient.Name = "btnChangeIngredient";
+            this.btnChangeIngredient.Size = new System.Drawing.Size(248, 59);
+            this.btnChangeIngredient.TabIndex = 2;
+            this.btnChangeIngredient.Text = "Change ingredient";
+            this.btnChangeIngredient.UseVisualStyleBackColor = true;
+            this.btnChangeIngredient.Click += new System.EventHandler(this.UpdateClick);
             // 
-            // delIng
+            // btnDeleteIngredient
             // 
-            this.delIng.Font = new System.Drawing.Font("Orbitron", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.delIng.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.delIng.Location = new System.Drawing.Point(475, 282);
-            this.delIng.Name = "delIng";
-            this.delIng.Size = new System.Drawing.Size(247, 57);
-            this.delIng.TabIndex = 3;
-            this.delIng.Text = "Delete an ingredient";
-            this.delIng.UseVisualStyleBackColor = true;
-            this.delIng.Click += new System.EventHandler(this.delIng_Click);
+            this.btnDeleteIngredient.Font = new System.Drawing.Font("Orbitron", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnDeleteIngredient.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnDeleteIngredient.Location = new System.Drawing.Point(475, 282);
+            this.btnDeleteIngredient.Name = "btnDeleteIngredient";
+            this.btnDeleteIngredient.Size = new System.Drawing.Size(247, 57);
+            this.btnDeleteIngredient.TabIndex = 3;
+            this.btnDeleteIngredient.Text = "Delete an ingredient";
+            this.btnDeleteIngredient.UseVisualStyleBackColor = true;
+            this.btnDeleteIngredient.Click += new System.EventHandler(this.DeleteClick);
             // 
-            // button1
+            // btnRefresh
             // 
-            this.button1.Font = new System.Drawing.Font("Orbitron", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.button1.Location = new System.Drawing.Point(605, 383);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 39);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRefresh.Font = new System.Drawing.Font("Orbitron", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnRefresh.Location = new System.Drawing.Point(605, 383);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(117, 39);
+            this.btnRefresh.TabIndex = 4;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.RefreshClick);
             // 
-            // CRUDMedicineView
+            // CRUDIngredientsView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.delIng);
-            this.Controls.Add(this.UpdateIng);
-            this.Controls.Add(this.AddIng);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnDeleteIngredient);
+            this.Controls.Add(this.btnChangeIngredient);
+            this.Controls.Add(this.btnAddIngredient);
             this.Controls.Add(this.listBox1);
-            this.Name = "CRUDMedicineView";
+            this.Name = "CRUDIngredientsView";
             this.Text = "CRUDMedicineView";
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRefresh;
 
-        private System.Windows.Forms.Button delIng;
+        private System.Windows.Forms.Button btnDeleteIngredient;
 
-        private System.Windows.Forms.Button UpdateIng;
+        private System.Windows.Forms.Button btnChangeIngredient;
 
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button AddIng;
+        private System.Windows.Forms.Button btnAddIngredient;
 
         #endregion
     }

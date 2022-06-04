@@ -29,44 +29,13 @@ namespace ProjectUSI.Manager.View
             }
         }
 
-        // private Dictionary<string, double> ParseIngredients(string s)
-        // {
-        //     Dictionary<string, double> ingredients = new Dictionary<string, double>();
-        //     string[] pairs = s.Split(';');
-        //     foreach (string str in pairs)
-        //     {
-        //         string[] pair = str.Split(':');
-        //         ingredients[pair[0]] = Double.Parse(pair[1]);
-        //     }
-        //
-        //     return ingredients;
-        // }
-
-
-        private void btnRooms_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int index = listBox1.SelectedIndex;
-                Medicine medicine = _mainRepository.MedicineRepository.GetMedicine()[index];
-                // ConfirmRenovationWindow confirm = new ConfirmRenovationWindow(roomForRenovation, _mainRepository, new RenovationController(null, null, _mainRepository));
-                // confirm.Show();
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show("You need to select room!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-     
-
-            private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
             {
                 try
                 {
                     int index = listBox1.SelectedIndex;
                     Medicine medicine = _mainRepository.MedicineRepository.GetMedicine()[index];
-                    CRUDMedicineView medicineView = new CRUDMedicineView(medicine, _mainRepository.MedicineRepository);
+                    CRUDIngredientsView medicineView = new CRUDIngredientsView(medicine, _mainRepository);
                     medicineView.Show();
                 }
                 catch (ArgumentOutOfRangeException exception)
@@ -84,7 +53,7 @@ namespace ProjectUSI.Manager.View
 
             private void newMed_Click(object sender, EventArgs e)
             {
-                AddNewMedicineWindow newMedicineWindow = new AddNewMedicineWindow();
+                AddNewMedicineWindow newMedicineWindow = new AddNewMedicineWindow(_mainRepository, new RequestController(_mainRepository.RequestRepository));
                 newMedicineWindow.Show();
             }
 

@@ -17,7 +17,7 @@ namespace ProjectUSI.Manager.View
         public RoomsWindow(MainRepository mainRepository, RoomController roomController)
         {
             _mainRepository = mainRepository;
-            _rooms = _mainRepository._RoomRepository.GetRooms();
+            _rooms = _mainRepository.RoomRepository.GetRooms();
             _controller = roomController;
             
             InitializeComponent();
@@ -83,7 +83,7 @@ namespace ProjectUSI.Manager.View
             try
             {
                 int index = listBox1.SelectedIndex;
-                Room roomForRenovation = _mainRepository._RoomRepository.GetRooms()[index];
+                Room roomForRenovation = _mainRepository.RoomRepository.GetRooms()[index];
                 ConfirmRenovationWindow confirm = new ConfirmRenovationWindow(roomForRenovation, _mainRepository, new RenovationController(null, null, _mainRepository));
                 confirm.Show();
             }

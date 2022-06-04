@@ -12,15 +12,13 @@ namespace ProjectUSI.Manager.View
     {
         private Medicine _medicine;
         private MedicineRepository _medicineRepository;
-        private string _item;
-        public ChangeIngredientsWindow(String item, Medicine medicine, MedicineRepository medicineRepository)
+        public ChangeIngredientsWindow(String itemName, Medicine medicine, MainRepository mainRepository)
         {
             _medicine = medicine;
-            _medicineRepository = medicineRepository;
-            _item = item;
+            _medicineRepository = mainRepository.MedicineRepository;
             InitializeComponent();
-            textBox2.Text = _item;
-            _medicine.Ingredients.Remove(_item);
+            textBox2.Text = itemName;
+            _medicine.Ingredients.Remove(itemName);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,10 +27,7 @@ namespace ProjectUSI.Manager.View
             {
                 string changedIngredient = textBox2.Text;
                 _medicine.Ingredients.Add(changedIngredient);
-            
-                List<Medicine> medicines = _medicineRepository.GetMedicine();
-                File.WriteAllText(@"..\..\Data\Medicaments.json",
-                    JsonConvert.SerializeObject(medicines));
+                _medicineRepository.Save();
             
                 MessageBox.Show("Chosen ingredient is successfully changed!","Success!",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

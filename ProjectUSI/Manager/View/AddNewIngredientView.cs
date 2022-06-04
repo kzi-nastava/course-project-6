@@ -17,8 +17,6 @@ namespace ProjectUSI.Manager.View
             _medicine = medicine;
             _medicineRepository = medicineRepository;
             InitializeComponent();
-            
-            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,10 +25,7 @@ namespace ProjectUSI.Manager.View
             {
                 string newIngredient = textBox2.Text;
                 _medicine.Ingredients.Add(newIngredient);
-            
-                List<Medicine> medicines = _medicineRepository.GetMedicine();
-                File.WriteAllText(@"..\..\Data\Medicaments.json",
-                    JsonConvert.SerializeObject(medicines));
+                _medicineRepository.Save();
             
             MessageBox.Show("New ingredient is successfully added!","Success!",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
