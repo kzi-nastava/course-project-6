@@ -8,6 +8,9 @@ using ProjectUSI.Manager.Repository;
 
 namespace ProjectUSI.Doctor.View
 {
+    /// <summary>
+    /// This window represents place where doctor rejects medicine and enter the reason why.
+    /// </summary>
     public partial class VerifyMedicineWindow : Form
     {
         private Request _request;

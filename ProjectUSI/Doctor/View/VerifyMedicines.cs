@@ -9,6 +9,9 @@ using ProjectUSI.Manager.Repository;
 
 namespace ProjectUSI.Doctor.View
 {
+    /// <summary>
+    /// This window represents all medicine requests where doctor can accept medicine or chose to reject it.
+    /// </summary>
     public partial class VerifyMedicines : Form
     {
         private RequestRepository _requestRepository = new RequestRepository();

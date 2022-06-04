@@ -32,7 +32,8 @@ namespace ProjectUSI.Doctor.View
         
         private void buttonCreateApp_Click(object sender, EventArgs e)
         {
-            CRUDAppointmentWindow crudAppointmentWindow = new CRUDAppointmentWindow(new AppointmentsRepository());
+            string type = "operation";
+            CRUDAppointmentWindow crudAppointmentWindow = new CRUDAppointmentWindow(type,new AppointmentsRepository());
             crudAppointmentWindow.Show();
         }
 
@@ -40,6 +41,13 @@ namespace ProjectUSI.Doctor.View
         {
             VerifyMedicines verifyMedicines = new VerifyMedicines();
             verifyMedicines.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string type = "check up";
+            CRUDAppointmentWindow crudAppointmentWindow = new CRUDAppointmentWindow(type,new AppointmentsRepository());
+            crudAppointmentWindow.Show();
         }
     }
 }
