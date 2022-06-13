@@ -1,6 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectUSI", "ProjectUSI.csproj", "{ABA153B0-8C1C-4B88-859D-04738B065DA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patient", "Patient\Patient.csproj", "{E9A823E0-969C-47C1-AB3A-9598426ABFC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +17,15 @@ Global
 		{ABA153B0-8C1C-4B88-859D-04738B065DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABA153B0-8C1C-4B88-859D-04738B065DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABA153B0-8C1C-4B88-859D-04738B065DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A823E0-969C-47C1-AB3A-9598426ABFC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A823E0-969C-47C1-AB3A-9598426ABFC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A823E0-969C-47C1-AB3A-9598426ABFC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A823E0-969C-47C1-AB3A-9598426ABFC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {83BFE64B-6EB2-480E-9B30-EB879AA1619B}
 	EndGlobalSection
 EndGlobal
