@@ -1,0 +1,16 @@
+[
+    {
+    "doctor": "Janko Jankovic",
+    "quality": 4,
+    "recommendation": 4,
+    "comment":  "",
+    "average": 4.00
+    },
+    {
+    "doctor": "Janko Jankovic",
+    "quality": 3,
+    "recommendation": 4,
+    "comment":  "",
+    "average": 3.50
+    }
+]
