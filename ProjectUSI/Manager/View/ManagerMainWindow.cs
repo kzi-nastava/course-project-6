@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using Patients.Models;
 using ProjectUSI.Manager.Controller;
 using ProjectUSI.Manager.Model;
 using ProjectUSI.Manager.Repository;
@@ -18,14 +19,6 @@ namespace ProjectUSI.Manager.View
             InitPanel(user);
             
         }
-        private void btnSignOut_Click(object sender, EventArgs e)
-        {
-            _MainRepository.Save();
-            LoginWindow loginWindow = new LoginWindow();
-            loginWindow.Show();
-            this.Dispose(false);
-        }
-
         private void InitPanel(User user)
         {
             string message = String.Format(" Welcome {0}! \n\n First name: {1} \n Last name: {2} \n Telephone: {3} \n Date of birth: {4} \n LBO: {5}", 
@@ -70,5 +63,28 @@ namespace ProjectUSI.Manager.View
             RequestWindow requestWindow = new RequestWindow(_MainRepository);
             requestWindow.Show();
         }
+
+        private void btnPolls_Click(object sender, EventArgs e)
+        {
+            DoctorsPoolsWindow doctorsPoolsWindow =
+                new DoctorsPoolsWindow(_MainRepository, new DoctorsPoolsController(_MainRepository, new DoctorQuery()));
+            doctorsPoolsWindow.Show();
+        }
+
+        private void btnHospitalPools_Click(object sender, EventArgs e)
+        {
+            HospitalPoolsWindow hospitalPoolsWindow =
+                new HospitalPoolsWindow(_MainRepository, new HospitalPoolsController(_MainRepository));
+            hospitalPoolsWindow.Show();
+        }
+        
+        private void btnSignOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            _MainRepository.Save();
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+        }
+
     }
 }
