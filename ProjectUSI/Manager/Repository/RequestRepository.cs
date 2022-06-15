@@ -28,7 +28,7 @@ namespace ProjectUSI.Manager.Repository
 
         public void DeleteRequest(Request request)
         {
-            this._requests.Add(request);
+            this._requests.Remove(request);
         }
         public void Save()
         {

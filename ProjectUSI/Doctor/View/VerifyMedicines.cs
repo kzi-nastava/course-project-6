@@ -19,6 +19,7 @@ namespace ProjectUSI.Doctor.View
         public VerifyMedicines()
         {
             InitializeComponent();
+            
             List<Request> reqs = _requestRepository.GetRequests();
             foreach (Request req in reqs)
             {
@@ -69,6 +70,7 @@ namespace ProjectUSI.Doctor.View
             
             int index = listBox1.SelectedIndex;
             item = _requestRepository.GetRequests().ElementAt(index);
+            
             try
             {
                 medicine.Name = item.Name;

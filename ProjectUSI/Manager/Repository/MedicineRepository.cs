@@ -69,7 +69,7 @@ namespace ProjectUSI.Manager.Repository
 
         public void Save()
         {
-            File.WriteAllText(@"..\..\Data\Medicine.json", JsonConvert.SerializeObject(_medicine));
+            File.WriteAllText(@"..\..\Data\Medicaments.json", JsonConvert.SerializeObject(_medicine));
         }
     }
 }
