@@ -1,18 +1,1 @@
-[
-    {
-    "quality": 4,
-    "hygiene": 4,
-    "satisfied":  5,
-    "recommendation": 5,
-    "average": 4.50,
-    "comment": ""
-    },
-    {
-    "quality": 3,
-    "hygiene": 4,
-    "satisfied":  3,
-    "recommendation": 4,
-    "average": 3.50,
-    "comment": ""
-    }
-]
+[{"quality":4,"hygiene":4,"satisfied":5,"recommendation":5,"average":4.5,"comment":"abcdef"},{"quality":3,"hygiene":4,"satisfied":3,"recommendation":4,"average":3.5,"comment":"hijklmn"}]

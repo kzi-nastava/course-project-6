@@ -103,7 +103,9 @@
           <DependentUpon>VerifyMedicineWindow.cs</DependentUpon>
         </Compile>
         <Compile Include="Manager\Controller\AddRoomController.cs" />
+        <Compile Include="Manager\Controller\DoctorsPoolsController.cs" />
         <Compile Include="Manager\Controller\EquipmentController.cs" />
+        <Compile Include="Manager\Controller\HospitalPoolsController.cs" />
         <Compile Include="Manager\Controller\MedicineController.cs" />
         <Compile Include="Manager\Controller\RelocationController.cs" />
         <Compile Include="Manager\Controller\RenovationController.cs" />
@@ -113,13 +115,16 @@
         <Compile Include="Manager\Model\EquipmentType.cs" />
         <Compile Include="Manager\Model\Medicine.cs" />
         <Compile Include="Manager\Model\Quantity.cs" />
+        <Compile Include="Manager\Model\Queries.cs" />
         <Compile Include="Manager\Model\Relocation.cs" />
         <Compile Include="Manager\Model\Renovation.cs" />
         <Compile Include="Manager\Model\RenovationType.cs" />
         <Compile Include="Manager\Model\Request.cs" />
         <Compile Include="Manager\Model\Room.cs" />
         <Compile Include="Manager\Model\RoomPurpose.cs" />
+        <Compile Include="Manager\Repository\DoctorsPoolsRepository.cs" />
         <Compile Include="Manager\Repository\EquipmentRepository.cs" />
+        <Compile Include="Manager\Repository\HospitalPoolsRepository.cs" />
         <Compile Include="Manager\Repository\MainRepository.cs" />
         <Compile Include="Manager\Repository\MedicineRepository.cs" />
         <Compile Include="Manager\Repository\RelocationRepository.cs" />
@@ -167,6 +172,24 @@
         </Compile>
         <Compile Include="Manager\View\CRUDIngredientsView.Designer.cs">
           <DependentUpon>CRUDIngredientsView.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Manager\View\DoctorsPoolSingleWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Manager\View\DoctorsPoolSingleWindow.Designer.cs">
+          <DependentUpon>DoctorsPoolSingleWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Manager\View\DoctorsPoolsWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Manager\View\DoctorsPoolsWindow.Designer.cs">
+          <DependentUpon>DoctorsPoolsWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Manager\View\HospitalPoolsWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Manager\View\HospitalPoolsWindow.Designer.cs">
+          <DependentUpon>HospitalPoolsWindow.cs</DependentUpon>
         </Compile>
         <Compile Include="Manager\View\MedicineWindow.cs">
           <SubType>Form</SubType>
@@ -252,8 +275,17 @@
         <EmbeddedResource Include="Manager\View\CRUDIngredientsView.resx">
           <DependentUpon>CRUDIngredientsView.cs</DependentUpon>
         </EmbeddedResource>
+        <EmbeddedResource Include="Manager\View\DoctorsPoolSingleWindow.resx">
+          <DependentUpon>DoctorsPoolSingleWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Manager\View\DoctorsPoolsWindow.resx">
+          <DependentUpon>DoctorsPoolsWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Manager\View\EquipmentWindow.resx">
           <DependentUpon>EquipmentWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Manager\View\HospitalPoolsWindow.resx">
+          <DependentUpon>HospitalPoolsWindow.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Manager\View\ManagerMainWindow.resx" />
         <EmbeddedResource Include="Manager\View\MedicineWindow.resx">
