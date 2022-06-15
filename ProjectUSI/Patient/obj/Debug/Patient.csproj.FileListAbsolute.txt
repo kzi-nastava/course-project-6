@@ -1,0 +1,15 @@
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\bin\Debug\Patient.dll
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\bin\Debug\Patient.pdb
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\obj\Debug\Patient.csproj.AssemblyReference.cache
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\obj\Debug\MainWindow.g.cs
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\obj\Debug\Patient_MarkupCompile.cache
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\obj\Debug\Patient_MarkupCompile.lref
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\obj\Debug\MainWindow.baml
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\obj\Debug\Themes\Generic.baml
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\obj\Debug\Patient.g.resources
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\obj\Debug\Patient.Properties.Resources.resources
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\obj\Debug\Patient.csproj.GenerateResource.cache
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\obj\Debug\Patient.csproj.CoreCompileInputs.cache
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\obj\Debug\Patient.dll
+C:\Users\Matija\Downloads\course-project-6-main\ProjectUSI\Patient\obj\Debug\Patient.pdb

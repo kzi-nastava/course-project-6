@@ -11,6 +11,9 @@ namespace ProjectUSI.Manager.Repository
         public RequestRepository RequestRepository { get; set; }
 
         public MedicineRepository MedicineRepository { get; set; }
+        
+        public HospitalPoolsRepository HospitalPoolsRepository { get; set; }
+        public DoctorsPoolsRepository DoctorsPoolsRepository { get; set; }
 
         public MainRepository()
         {
@@ -20,6 +23,8 @@ namespace ProjectUSI.Manager.Repository
             RenovationRepository = new RenovationRepository();
             MedicineRepository = new MedicineRepository();
             RequestRepository = new RequestRepository();
+            HospitalPoolsRepository = new HospitalPoolsRepository();
+            DoctorsPoolsRepository = new DoctorsPoolsRepository();
         }
 
         public void Save()
@@ -30,6 +35,8 @@ namespace ProjectUSI.Manager.Repository
             RenovationRepository.Save();
             MedicineRepository.Save();
             RequestRepository.Save();
+            HospitalPoolsRepository.Save();
+            DoctorsPoolsRepository.Save();
         }
     }
 }

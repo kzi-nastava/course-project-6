@@ -32,8 +32,9 @@ namespace ProjectUSI.Manager.View
         private void InitializeComponent()
         {
             this.pnlButtons = new System.Windows.Forms.Panel();
+            this.btnHospitalPools = new System.Windows.Forms.Button();
             this.btnSignOut = new System.Windows.Forms.Button();
-            this.btnPolls = new System.Windows.Forms.Button();
+            this.btnDoctorsPools = new System.Windows.Forms.Button();
             this.btnRejectedMedicaments = new System.Windows.Forms.Button();
             this.btnEquipmentReviw = new System.Windows.Forms.Button();
             this.btnMedicaments = new System.Windows.Forms.Button();
@@ -48,8 +49,9 @@ namespace ProjectUSI.Manager.View
             // pnlButtons
             // 
             this.pnlButtons.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnlButtons.Controls.Add(this.btnHospitalPools);
             this.pnlButtons.Controls.Add(this.btnSignOut);
-            this.pnlButtons.Controls.Add(this.btnPolls);
+            this.pnlButtons.Controls.Add(this.btnDoctorsPools);
             this.pnlButtons.Controls.Add(this.btnRejectedMedicaments);
             this.pnlButtons.Controls.Add(this.btnEquipmentReviw);
             this.pnlButtons.Controls.Add(this.btnMedicaments);
@@ -57,30 +59,44 @@ namespace ProjectUSI.Manager.View
             this.pnlButtons.Controls.Add(this.btnRooms);
             this.pnlButtons.Location = new System.Drawing.Point(32, 28);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(317, 394);
+            this.pnlButtons.Size = new System.Drawing.Size(317, 465);
             this.pnlButtons.TabIndex = 0;
+            // 
+            // btnHospitalPools
+            // 
+            this.btnHospitalPools.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnHospitalPools.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnHospitalPools.Location = new System.Drawing.Point(16, 339);
+            this.btnHospitalPools.Name = "btnHospitalPools";
+            this.btnHospitalPools.Size = new System.Drawing.Size(284, 47);
+            this.btnHospitalPools.TabIndex = 7;
+            this.btnHospitalPools.Text = "Hospital pools";
+            this.btnHospitalPools.UseVisualStyleBackColor = true;
+            this.btnHospitalPools.Click += new System.EventHandler(this.btnHospitalPools_Click);
             // 
             // btnSignOut
             // 
             this.btnSignOut.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.btnSignOut.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnSignOut.Location = new System.Drawing.Point(16, 339);
+            this.btnSignOut.Location = new System.Drawing.Point(16, 392);
             this.btnSignOut.Name = "btnSignOut";
             this.btnSignOut.Size = new System.Drawing.Size(284, 47);
             this.btnSignOut.TabIndex = 1;
             this.btnSignOut.Text = "Sign out";
             this.btnSignOut.UseVisualStyleBackColor = true;
+            this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
             // 
-            // btnPolls
+            // btnDoctorsPools
             // 
-            this.btnPolls.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.btnPolls.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.btnPolls.Location = new System.Drawing.Point(16, 286);
-            this.btnPolls.Name = "btnPolls";
-            this.btnPolls.Size = new System.Drawing.Size(284, 47);
-            this.btnPolls.TabIndex = 6;
-            this.btnPolls.Text = "Polls";
-            this.btnPolls.UseVisualStyleBackColor = true;
+            this.btnDoctorsPools.Font = new System.Drawing.Font("Orbitron", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.btnDoctorsPools.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnDoctorsPools.Location = new System.Drawing.Point(16, 286);
+            this.btnDoctorsPools.Name = "btnDoctorsPools";
+            this.btnDoctorsPools.Size = new System.Drawing.Size(284, 47);
+            this.btnDoctorsPools.TabIndex = 6;
+            this.btnDoctorsPools.Text = "Doctors pools";
+            this.btnDoctorsPools.UseVisualStyleBackColor = true;
+            this.btnDoctorsPools.Click += new System.EventHandler(this.btnPolls_Click);
             // 
             // btnRejectedMedicaments
             // 
@@ -149,7 +165,7 @@ namespace ProjectUSI.Manager.View
             this.pnlWelcome.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.pnlWelcome.Location = new System.Drawing.Point(371, 28);
             this.pnlWelcome.Name = "pnlWelcome";
-            this.pnlWelcome.Size = new System.Drawing.Size(556, 394);
+            this.pnlWelcome.Size = new System.Drawing.Size(556, 465);
             this.pnlWelcome.TabIndex = 1;
             // 
             // label1
@@ -158,14 +174,14 @@ namespace ProjectUSI.Manager.View
             this.label1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.label1.Location = new System.Drawing.Point(17, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(513, 365);
+            this.label1.Size = new System.Drawing.Size(513, 418);
             this.label1.TabIndex = 0;
             // 
             // ManagerMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(939, 446);
+            this.ClientSize = new System.Drawing.Size(939, 530);
             this.Controls.Add(this.pnlWelcome);
             this.Controls.Add(this.pnlButtons);
             this.Name = "ManagerMainWindow";
@@ -176,11 +192,13 @@ namespace ProjectUSI.Manager.View
             this.ResumeLayout(false);
         }
 
+        private System.Windows.Forms.Button btnHospitalPools;
+
         private System.Windows.Forms.Button btnRenovation;
         private System.Windows.Forms.Button btnMedicaments;
         private System.Windows.Forms.Button btnEquipmentReviw;
         private System.Windows.Forms.Button btnRejectedMedicaments;
-        private System.Windows.Forms.Button btnPolls;
+        private System.Windows.Forms.Button btnDoctorsPools;
         private System.Windows.Forms.Button btnSignOut;
 
         private System.Windows.Forms.Button btnRooms;
