@@ -1,8 +1,8 @@
 using System;
 using System.Windows.Forms;
+using Patient;
 using ProjectUSI.Doctor.Repository;
 using ProjectUSI.Doctor.View;
-using ProjectUSI.Manager.View;
 using ProjectUSI.Users.Controller;
 using ProjectUSI.Users.Model;
 //using Patient;
@@ -44,8 +44,8 @@ namespace ProjectUSI.Users.View
                             doctorMainWindow.Show();
                             break;
                         case Role.Patient:
-                            //MainWindow mainWindow = new MainWindow(email, password);
-                            //mainWindow.Show();
+                            MainWindow mainWindow = new MainWindow(email, password);
+                            mainWindow.Show();
                             break;
                         case Role.Secretary:
                             //TODO: otvoriti glavni prozor sekretara
