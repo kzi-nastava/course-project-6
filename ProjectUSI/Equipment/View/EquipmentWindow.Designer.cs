@@ -1,9 +1,6 @@
-using System;
 using System.ComponentModel;
-using ProjectUSI.Manager.Model;
-using static ProjectUSI.Manager.Model.EquipmentType;
 
-namespace ProjectUSI.Manager.View
+namespace ProjectUSI.Equipment.View
 {
     partial class EquipmentWindow
     {

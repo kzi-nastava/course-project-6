@@ -107,7 +107,7 @@ namespace ProjectUSI.Doctor.View
         
         private System.Windows.Forms.Button instantReq;
 
-        private System.Windows.Forms.ListBox listBox1;
+        public System.Windows.Forms.ListBox listBox1;
 
         #endregion
     }

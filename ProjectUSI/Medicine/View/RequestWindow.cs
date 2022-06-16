@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
+using ProjectUSI.Medicine.Model;
+using ProjectUSI.Medicine.Repository;
+using ProjectUSI.Users.Repository;
 
-namespace ProjectUSI.Manager.View
+namespace ProjectUSI.Medicine.View
 {
     public partial class RequestWindow : Form
     {

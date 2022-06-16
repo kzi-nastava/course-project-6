@@ -5,11 +5,12 @@ using System.Linq;
 using System.Windows.Forms;
 using ProjectUSI.Doctor.Model;
 using ProjectUSI.Doctor.Repository;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
-using ProjectUSI.Manager.View;
+using ProjectUSI.Rooms.Model;
+using ProjectUSI.Rooms.Repository;
+using ProjectUSI.Rooms.View;
+using ProjectUSI.Users.Repository;
 
-namespace ProjectUSI.Manager.Controller
+namespace ProjectUSI.Rooms.Controller
 {
     
     public class RenovationController
@@ -132,7 +133,7 @@ namespace ProjectUSI.Manager.Controller
             if (renovation.Type == RenovationType.Merging)
             {
                 Room newRoom = new Room(renovation.RoomToAttach.Name, renovation.RoomToAttach.Id, renovation.PrimaryRoom.Purpose, renovation.PrimaryRoom.Area + renovation.RoomToAttach.Area);
-                foreach (Equipment equipment in _mainRepository.EquipmentRepository.GetEquipment())
+                foreach (Equipment.Model.Equipment equipment in _mainRepository.EquipmentRepository.GetEquipment())
                 {
                     if (equipment.DeployedIn.Id == renovation.PrimaryRoom.Id || equipment.DeployedIn.Id == renovation.RoomToAttach.Id)
                     {

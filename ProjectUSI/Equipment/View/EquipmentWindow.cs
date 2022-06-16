@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using ProjectUSI.Manager.Controller;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
+using ProjectUSI.Equipment.Controller;
+using ProjectUSI.Equipment.Model;
+using ProjectUSI.Equipment.Repository;
+using ProjectUSI.Rooms.Model;
+using ProjectUSI.Users.Repository;
 
-namespace ProjectUSI.Manager.View
+namespace ProjectUSI.Equipment.View
 {
     public partial class EquipmentWindow : Form
     {
@@ -34,7 +36,7 @@ namespace ProjectUSI.Manager.View
             cbEquipmentType.SelectedItem = cbEquipmentType.Items[0];
         }
 
-        private void InitListBox(List<Equipment> equipment)
+        private void InitListBox(List<Model.Equipment> equipment)
         {
             for (int i = 0; i < equipment.Count; i++)
             {
@@ -51,7 +53,7 @@ namespace ProjectUSI.Manager.View
 
             if(!string.IsNullOrEmpty(textBox1.Text)) 
             {
-                foreach (Equipment equipment in equipmentList)
+                foreach (Model.Equipment equipment in equipmentList)
                 {                
                     if (equipment.ToString().Contains(textBox1.Text))
                     {
@@ -69,7 +71,7 @@ namespace ProjectUSI.Manager.View
             RoomPurpose roomPurpose = (RoomPurpose) cbRoomType.SelectedItem;
             Quantity quantity = (Quantity) cbQuantity.SelectedItem;
             EquipmentType equipmentType = (EquipmentType) cbEquipmentType.SelectedItem;
-            List<Equipment> filtered = _controller.Filter(roomPurpose, equipmentType, quantity);
+            List<Model.Equipment> filtered = _controller.Filter(roomPurpose, equipmentType, quantity);
             listBox1.BeginUpdate();
             listBox1.Items.Clear();
             InitListBox(filtered);
@@ -79,7 +81,7 @@ namespace ProjectUSI.Manager.View
         private void btnRelocate_Click(object sender, EventArgs e)
         {
             int index = listBox1.SelectedIndex;
-            Equipment equipment =_equipmentRepository.GetEquipment()[index];
+            Model.Equipment equipment =_equipmentRepository.GetEquipment()[index];
             RelocateWindow relocateWindow = new RelocateWindow(equipment.DeployedIn.Name, _mainRepository,
                 new RelocationController(new Relocation(), null, _mainRepository));
             relocateWindow.Show();

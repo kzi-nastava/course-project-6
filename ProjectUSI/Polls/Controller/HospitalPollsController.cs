@@ -6,14 +6,14 @@ using ProjectUSI.Users.Repository;
 
 namespace ProjectUSI.Polls.Controller
 {
-    public class HospitalPoolsController
+    public class HospitalPollsController
     {
-        private HospitalPoolsRepository _hospitalPoolsRepository;
+        private HospitalPollsRepository _hospitalPoolsRepository;
         private Dictionary<string, Dictionary<int, int>> _grades;
 
-        public HospitalPoolsController(MainRepository mainRepository)
+        public HospitalPollsController(MainRepository mainRepository)
         {
-            _hospitalPoolsRepository = mainRepository.HospitalPoolsRepository;
+            _hospitalPoolsRepository = mainRepository.HospitalPollsRepository;
             InitGrades();
             GetGradesCount();
         }

@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using ProjectUSI.Doctor.Model;
-using ProjectUSI.Manager.Model;
+using ProjectUSI.Medicine.Model;
 
-namespace ProjectUSI.Manager.Repository
+namespace ProjectUSI.Medicine.Repository
 {
     public class RequestRepository
     {

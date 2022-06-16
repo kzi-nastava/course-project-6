@@ -1,13 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Windows.Forms;
-using Newtonsoft.Json;
-using ProjectUSI.Manager.Controller;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
+using ProjectUSI.Medicine.Controller;
+using ProjectUSI.Medicine.Repository;
+using ProjectUSI.Users.Repository;
 
-namespace ProjectUSI.Manager.View
+namespace ProjectUSI.Medicine.View
 {
     public partial class AddNewMedicineWindow : Form
     {

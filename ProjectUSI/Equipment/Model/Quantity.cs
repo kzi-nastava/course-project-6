@@ -1,4 +1,4 @@
-namespace ProjectUSI.Manager.Model
+namespace ProjectUSI.Equipment.Model
 {
     public enum Quantity
     {

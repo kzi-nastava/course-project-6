@@ -6,12 +6,12 @@ using ProjectUSI.Polls.Repository;
 
 namespace ProjectUSI.Polls.View
 {
-    public partial class DoctorsPoolSingleWindow : Form
+    public partial class DoctorsPollSingleWindow : Form
     {
         private string _name;
-        private DoctorsPoolsRepository _doctorsPoolsRepository;
-        private DoctorsPoolsController _doctorsPoolsController;
-        public DoctorsPoolSingleWindow(DoctorsPoolsRepository doctorsPoolsRepository, string name, DoctorsPoolsController doctorsPoolsController)
+        private DoctorsPollsRepository _doctorsPoolsRepository;
+        private DoctorsPollsController _doctorsPoolsController;
+        public DoctorsPollSingleWindow(DoctorsPollsRepository doctorsPoolsRepository, string name, DoctorsPollsController doctorsPoolsController)
         {
             _name = name;
             _doctorsPoolsRepository = doctorsPoolsRepository;

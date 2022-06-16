@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using ProjectUSI.Manager.Model;
+using ProjectUSI.Equipment.Model;
+using ProjectUSI.Rooms.Model;
+using ProjectUSI.Rooms.Repository;
 
-namespace ProjectUSI.Manager.Repository
+namespace ProjectUSI.Equipment.Repository
 {
     public class RelocationRepository
     {

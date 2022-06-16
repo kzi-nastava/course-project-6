@@ -80,11 +80,9 @@ namespace ProjectUSI.Doctor.View
                 medicines.Add(medicine);
                 requests.Remove(item);
 
-                File.WriteAllText(@"..\..\Data\Medicaments.json",
-                    JsonConvert.SerializeObject(medicines));
+                _medicineRepository.Save();
 
-                File.WriteAllText(@"..\..\Data\MedicineRequests.json",
-                    JsonConvert.SerializeObject(requests));
+                _requestRepository.Save();
 
                 MessageBox.Show("Selected medicine is successfully accepted.", "Success!",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);

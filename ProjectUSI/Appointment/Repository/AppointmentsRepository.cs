@@ -16,7 +16,7 @@ namespace ProjectUSI.Doctor.Repository
 
         public AppointmentsRepository()
         {
-            string json = File.ReadAllText(@"..\..\Doctor\Data\Appointments1.json");
+            string json = File.ReadAllText(@"..\..\Data\Appointments1.json");
             List<Appointments> appointment = JsonConvert.DeserializeObject<List<Appointments>>(json);
             appointments = appointment;
         }
@@ -40,6 +40,12 @@ namespace ProjectUSI.Doctor.Repository
             }
 
             return b;
+        }
+        
+        public void Save()
+        {
+            File.WriteAllText(@"..\..\Data\Appointments1.json", 
+                JsonConvert.SerializeObject(appointments));
         }
     }
 }

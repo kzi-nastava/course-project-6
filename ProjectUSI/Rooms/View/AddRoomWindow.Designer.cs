@@ -1,8 +1,6 @@
-using System;
 using System.ComponentModel;
-using ProjectUSI.Manager.Model;
 
-namespace ProjectUSI.Manager.View
+namespace ProjectUSI.Rooms.View
 {
     partial class AddRoomWindow
     {

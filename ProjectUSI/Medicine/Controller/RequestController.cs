@@ -1,10 +1,8 @@
-using System;
 using System.Collections.Generic;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
-using ProjectUSI.Manager.View;
+using ProjectUSI.Medicine.Model;
+using ProjectUSI.Medicine.Repository;
 
-namespace ProjectUSI.Manager.Controller
+namespace ProjectUSI.Medicine.Controller
 {
     public class RequestController
     {

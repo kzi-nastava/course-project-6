@@ -11,7 +11,7 @@ namespace ProjectUSI.Doctor.Repository
         private AppointmentsRepository _appointmentsRepository = new AppointmentsRepository();
         public FreeDaysRepository()
         {
-            string json = File.ReadAllText(@"..\..\Doctor\Data\FreeDays.json");
+            string json = File.ReadAllText(@"..\..\Data\FreeDaysRequests.json");
             List<FreeDays> freeDay = JsonConvert.DeserializeObject<List<FreeDays>>(json);
             freeDays = freeDay;
         }
@@ -39,6 +39,11 @@ namespace ProjectUSI.Doctor.Repository
                 }
             }
             return b;
+        }
+        public void Save()
+        {
+            File.WriteAllText(@"..\..\Data\FreeDaysRequests.json", 
+                JsonConvert.SerializeObject(freeDays));
         }
     }
 }

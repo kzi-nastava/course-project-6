@@ -1,4 +1,4 @@
-namespace ProjectUSI.Manager.Model
+namespace ProjectUSI.Rooms.Model
 {
     public class Room
     {

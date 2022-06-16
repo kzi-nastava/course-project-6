@@ -1,9 +1,9 @@
 using System;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
-using ProjectUSI.Manager.View;
+using ProjectUSI.Medicine.Repository;
+using ProjectUSI.Medicine.View;
+using ProjectUSI.Users.Repository;
 
-namespace ProjectUSI.Manager.Controller
+namespace ProjectUSI.Medicine.Controller
 {
     public class MedicineController
     {
@@ -24,7 +24,7 @@ namespace ProjectUSI.Manager.Controller
             _view.Show();
         }
 
-        public void DeleteMedicine(Medicine medicine)
+        public void DeleteMedicine(Model.Medicine medicine)
         {
             if (medicine != null)
             {
@@ -37,7 +37,7 @@ namespace ProjectUSI.Manager.Controller
             }
         }
 
-        public void UpdateMedicine(Medicine medicine)
+        public void UpdateMedicine(Model.Medicine medicine)
         {
             if (medicine != null)
             {
@@ -50,7 +50,7 @@ namespace ProjectUSI.Manager.Controller
             }
         }
         
-        public void AddMedicine(Medicine medicine)
+        public void AddMedicine(Model.Medicine medicine)
         {
             if (medicine != null)
             {

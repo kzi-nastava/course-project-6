@@ -1,14 +1,11 @@
-using System.Windows.Forms;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using Newtonsoft.Json;
-using ProjectUSI.Manager.Controller;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
+using System.Windows.Forms;
+using ProjectUSI.Medicine.Controller;
+using ProjectUSI.Users.Repository;
 
-namespace ProjectUSI.Manager.View
+namespace ProjectUSI.Medicine.View
 {
     public partial class MedicineWindow : Form
     {
@@ -21,7 +18,7 @@ namespace ProjectUSI.Manager.View
             InitializeComponent();
             InitListBox(_mainRepository.MedicineRepository.GetMedicine());
         }
-        private void InitListBox(List<Medicine> medicine)
+        private void InitListBox(List<Model.Medicine> medicine)
         {
             for (int i = 0; i < medicine.Count; i++)
             {
@@ -34,7 +31,7 @@ namespace ProjectUSI.Manager.View
                 try
                 {
                     int index = listBox1.SelectedIndex;
-                    Medicine medicine = _mainRepository.MedicineRepository.GetMedicine()[index];
+                    Model.Medicine medicine = _mainRepository.MedicineRepository.GetMedicine()[index];
                     CRUDIngredientsView medicineView = new CRUDIngredientsView(medicine, _mainRepository);
                     medicineView.Show();
                 }

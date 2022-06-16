@@ -6,17 +6,17 @@ using ProjectUSI.Users.Repository;
 
 namespace ProjectUSI.Polls.Controller
 {
-    public class DoctorsPoolsController
+    public class DoctorsPollsController
     {
-        private DoctorsPoolsRepository _doctorsPoolsRepository;
+        private DoctorsPollsRepository _doctorsPollsRepository;
         private Dictionary<string, Dictionary<int, int>> _grades;
         private Dictionary<string, Dictionary<int, int>> _doctorGrades;
         private DoctorQuery _doctor;
 
-        public DoctorsPoolsController(MainRepository mainRepository, DoctorQuery doctorQuery)
+        public DoctorsPollsController(MainRepository mainRepository, DoctorQuery doctorQuery)
         {
             _doctor = doctorQuery;
-            _doctorsPoolsRepository = mainRepository.DoctorsPoolsRepository;
+            _doctorsPollsRepository = mainRepository.DoctorsPollsRepository;
             InitGrades();
             GetGradesCount();
             
@@ -28,14 +28,14 @@ namespace ProjectUSI.Polls.Controller
             GetGradesCountSingle();
         }
 
-        public List<DoctorQuery> GetPools()
+        public List<DoctorQuery> GetPolls()
         {
-            return _doctorsPoolsRepository.GetPools();
+            return _doctorsPollsRepository.GetPolls();
         }
         public List<DoctorQuery> GetDoctorsPols()
         {
             List<DoctorQuery> singleDoctorPools = new List<DoctorQuery>();
-            foreach (DoctorQuery doctorQuery in GetPools())
+            foreach (DoctorQuery doctorQuery in GetPolls())
             {
                 if (_doctor.doctor.Equals(doctorQuery.doctor))
                 {
@@ -70,7 +70,7 @@ namespace ProjectUSI.Polls.Controller
 
         public void GetGradesCount()
         {
-            foreach (DoctorQuery doctorQuery in _doctorsPoolsRepository.GetPools())
+            foreach (DoctorQuery doctorQuery in _doctorsPollsRepository.GetPolls())
             {
                 _grades["quality"][doctorQuery.quality] += 1;
                 _grades["recommendation"][doctorQuery.recommendation] += 1;
@@ -116,7 +116,7 @@ namespace ProjectUSI.Polls.Controller
 
         public void GetGradesCountSingle()
         {
-            foreach (DoctorQuery doctorQuery in _doctorsPoolsRepository.GetPools())
+            foreach (DoctorQuery doctorQuery in _doctorsPollsRepository.GetPolls())
             {
                 if (_doctor.doctor.Equals(doctorQuery.doctor))
                 {

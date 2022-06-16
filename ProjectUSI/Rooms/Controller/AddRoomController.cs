@@ -1,9 +1,9 @@
+using ProjectUSI.Rooms.Model;
+using ProjectUSI.Rooms.Repository;
+using ProjectUSI.Rooms.View;
+using ProjectUSI.Users.Repository;
 
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
-using ProjectUSI.Manager.View;
-
-namespace ProjectUSI.Manager.Controller
+namespace ProjectUSI.Rooms.Controller
 {
     public class AddRoomController
     {

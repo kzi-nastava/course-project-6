@@ -1,13 +1,19 @@
 using System;
 using System.Windows.Forms;
 using Patients.Models;
-using ProjectUSI.Manager.Controller;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
+using ProjectUSI.Equipment.Controller;
+using ProjectUSI.Equipment.View;
+using ProjectUSI.Medicine.Controller;
+using ProjectUSI.Medicine.View;
+using ProjectUSI.Polls.Controller;
+using ProjectUSI.Polls.View;
+using ProjectUSI.Rooms.Controller;
+using ProjectUSI.Rooms.Model;
+using ProjectUSI.Rooms.View;
 using ProjectUSI.Users.Model;
-using ProjectUSI.Users.View;
+using ProjectUSI.Users.Repository;
 
-namespace ProjectUSI.Manager.View
+namespace ProjectUSI.Users.View
 {
     public partial class ManagerMainWindow : Form
     {
@@ -35,7 +41,7 @@ namespace ProjectUSI.Manager.View
         private void btnEquipment_Click(object sender, EventArgs e)
         {
             EquipmentWindow equipmentWindow = new EquipmentWindow(_MainRepository, null);
-            EquipmentController equipmentController = new EquipmentController(new Equipment(), equipmentWindow, _MainRepository);
+            EquipmentController equipmentController = new EquipmentController(new Equipment.Model.Equipment(), equipmentWindow, _MainRepository);
             equipmentWindow._controller = equipmentController;
             equipmentWindow.Show();
         }
@@ -67,14 +73,14 @@ namespace ProjectUSI.Manager.View
         private void btnPolls_Click(object sender, EventArgs e)
         {
             DoctorsPoolsWindow doctorsPoolsWindow =
-                new DoctorsPoolsWindow(_MainRepository, new DoctorsPoolsController(_MainRepository, new DoctorQuery()));
+                new DoctorsPoolsWindow(_MainRepository, new DoctorsPollsController(_MainRepository, new DoctorQuery()));
             doctorsPoolsWindow.Show();
         }
 
         private void btnHospitalPools_Click(object sender, EventArgs e)
         {
             HospitalPoolsWindow hospitalPoolsWindow =
-                new HospitalPoolsWindow(_MainRepository, new HospitalPoolsController(_MainRepository));
+                new HospitalPoolsWindow(_MainRepository, new HospitalPollsController(_MainRepository));
             hospitalPoolsWindow.Show();
         }
         

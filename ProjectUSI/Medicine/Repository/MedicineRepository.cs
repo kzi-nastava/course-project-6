@@ -1,33 +1,32 @@
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using ProjectUSI.Manager.Model;
 
-namespace ProjectUSI.Manager.Repository
+namespace ProjectUSI.Medicine.Repository
 {
     public class MedicineRepository
     {
-        private List<Medicine> _medicine;
+        private List<Model.Medicine> _medicine;
 
         public MedicineRepository()
         {
             string json = File.ReadAllText(@"..\..\Data\Medicaments.json");
-            List<Medicine> medicine = JsonConvert.DeserializeObject<List<Medicine>>(json);
+            List<Model.Medicine> medicine = JsonConvert.DeserializeObject<List<Model.Medicine>>(json);
             _medicine = medicine;
         }
-        public List<Medicine> GetMedicine()
+        public List<Model.Medicine> GetMedicine()
         {
             return _medicine;
         }
 
-        public void SetMedicine(List<Medicine> medicine)
+        public void SetMedicine(List<Model.Medicine> medicine)
         {
             _medicine = medicine;
         }
 
-        public Medicine GetMedicineByName(string name)
+        public Model.Medicine GetMedicineByName(string name)
         {
-            foreach (Medicine medicine in _medicine)
+            foreach (Model.Medicine medicine in _medicine)
             {
                 if (medicine.Name.Equals(name))
                 {
@@ -38,9 +37,9 @@ namespace ProjectUSI.Manager.Repository
             return null;
         }
 
-        public void UpdateMedicine(Medicine medicineForUpdate)
+        public void UpdateMedicine(Model.Medicine medicineForUpdate)
         {
-            foreach (Medicine medicine in _medicine)
+            foreach (Model.Medicine medicine in _medicine)
             {
                 if (medicine.Name.Equals(medicineForUpdate.Name))
                 {
@@ -50,9 +49,9 @@ namespace ProjectUSI.Manager.Repository
             }
         }
 
-        public void DeleteMedicine(Medicine medicineToDelete)
+        public void DeleteMedicine(Model.Medicine medicineToDelete)
         {
-            foreach (Medicine medicine in _medicine)
+            foreach (Model.Medicine medicine in _medicine)
             {
                 if (medicine.Name.Equals(medicineToDelete.Name))
                 {
@@ -61,7 +60,7 @@ namespace ProjectUSI.Manager.Repository
             }
         }
 
-        public void Add(Medicine medicine)
+        public void Add(Model.Medicine medicine)
         {
             _medicine.Add(medicine);
         }

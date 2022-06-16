@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
-using ProjectUSI.Manager.Controller;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
+using ProjectUSI.Equipment.Controller;
+using ProjectUSI.Users.Repository;
 
-namespace ProjectUSI.Manager.View
+namespace ProjectUSI.Equipment.View
 {
     public partial class RelocateWindow : Form
     {

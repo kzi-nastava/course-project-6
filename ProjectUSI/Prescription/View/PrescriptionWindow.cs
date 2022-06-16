@@ -14,12 +14,13 @@ namespace ProjectUSI.Doctor.View
     public partial class PrescriptionWindow : Form
     {
         private MedicalRecordRepository _medicalRecordRepository;
-        private string _allergens;
+        private PrescriptionRepository _prescriptionRepository = new PrescriptionRepository();
+        private string email;
         
-        public PrescriptionWindow(MedicalRecordRepository medicalRecordRepository, string Allergens)
+        public PrescriptionWindow(MedicalRecordRepository medicalRecordRepository, string PatientEmail)
         {
             _medicalRecordRepository = medicalRecordRepository;
-            Allergens = _allergens;
+            email = PatientEmail;
             InitializeComponent();
         }
 
@@ -27,21 +28,15 @@ namespace ProjectUSI.Doctor.View
         {
             Prescription prescription = new Prescription();
             List<Prescription> prescriptions = new List<Prescription>();
-            //List<MedicalRecord> medicalRecords = _medicalRecordRepository.GetMedicalRecords();
             
-            
-            prescription.PatientEmail = patientEmail.Text;
+            prescription.PatientEmail = email;
             prescription.Medication = medications.Text;
             prescription.Instruction = instructions.Text;
             prescription.Time = time.Text;
-            // foreach (Medicine medicine in medicines)
-            // {
-            //     if(medicine.Ingredients.ContainsKey())
-            // }
+            
             prescriptions.Add(prescription);
             
-            File.WriteAllText(@"..\..\Doctor\Data\Prescription.json",
-                JsonConvert.SerializeObject(prescriptions));
+            _prescriptionRepository.Save();
             
             MessageBox.Show("Prescription is successfully given.","Success!", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);

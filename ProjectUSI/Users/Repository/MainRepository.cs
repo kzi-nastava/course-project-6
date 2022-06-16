@@ -1,6 +1,9 @@
+using ProjectUSI.Equipment.Repository;
+using ProjectUSI.Medicine.Repository;
+using ProjectUSI.Polls.Repository;
+using ProjectUSI.Rooms.Repository;
 
-
-namespace ProjectUSI.Manager.Repository
+namespace ProjectUSI.Users.Repository
 {
     public class MainRepository
     {
@@ -12,8 +15,8 @@ namespace ProjectUSI.Manager.Repository
 
         public MedicineRepository MedicineRepository { get; set; }
         
-        public HospitalPoolsRepository HospitalPoolsRepository { get; set; }
-        public DoctorsPoolsRepository DoctorsPoolsRepository { get; set; }
+        public HospitalPollsRepository HospitalPollsRepository { get; set; }
+        public DoctorsPollsRepository DoctorsPollsRepository { get; set; }
 
         public MainRepository()
         {
@@ -23,8 +26,8 @@ namespace ProjectUSI.Manager.Repository
             RenovationRepository = new RenovationRepository();
             MedicineRepository = new MedicineRepository();
             RequestRepository = new RequestRepository();
-            HospitalPoolsRepository = new HospitalPoolsRepository();
-            DoctorsPoolsRepository = new DoctorsPoolsRepository();
+            HospitalPollsRepository = new HospitalPollsRepository();
+            DoctorsPollsRepository = new DoctorsPollsRepository();
         }
 
         public void Save()
@@ -35,8 +38,8 @@ namespace ProjectUSI.Manager.Repository
             RenovationRepository.Save();
             MedicineRepository.Save();
             RequestRepository.Save();
-            HospitalPoolsRepository.Save();
-            DoctorsPoolsRepository.Save();
+            HospitalPollsRepository.Save();
+            DoctorsPollsRepository.Save();
         }
     }
 }

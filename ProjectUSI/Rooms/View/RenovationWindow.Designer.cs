@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace ProjectUSI.Manager.View
+namespace ProjectUSI.Rooms.View
 {
     partial class RenovationWindow
     {

@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 using ProjectUSI.Doctor.Model;
 using ProjectUSI.Doctor.Repository;
 using ProjectUSI.Doctor.View;
@@ -12,9 +16,10 @@ namespace ProjectUSI.Doctor.Controller
 
         public FreeDaysController(FreeDays model, FreeDaysWindow view, FreeDaysRepository freeDaysRepository)
         {
-            this._model = model;
-            this._freeDaysRepository = freeDaysRepository;
-            this._view = view;
+            _model = model;
+            _freeDaysRepository = freeDaysRepository;
+            _view = view;
         }
+        
     }
 }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using ProjectUSI.Doctor.Controller;
 using ProjectUSI.Doctor.Model;
 using ProjectUSI.Doctor.Repository;
 using Status = ProjectUSI.Medicine.Model.Status;
@@ -12,14 +13,13 @@ namespace ProjectUSI.Doctor.View
 {
     public partial class FreeDaysWindow : Form
     {
-        private FreeDaysRepository _freeDaysRepository = new FreeDaysRepository();
+        public static FreeDaysRepository _freeDaysRepository = new FreeDaysRepository();
         public FreeDaysWindow()
         {
             InitializeComponent();
             InitListBox();
         }
-        
-        private void InitListBox()
+        public void InitListBox()
         {
             List<FreeDays> freeDays = _freeDaysRepository.GetFreeDays();
             foreach (FreeDays freeDay in freeDays)
@@ -30,8 +30,13 @@ namespace ProjectUSI.Doctor.View
 
         private void refresh_Click(object sender, EventArgs e)
         {
+            FreeDaysRepository newFreeDaysRepository = new FreeDaysRepository();
+            List<FreeDays> freeDays = newFreeDaysRepository.GetFreeDays();
             listBox1.Items.Clear();
-            InitListBox();
+            foreach (FreeDays freeDay in freeDays)
+            {
+                listBox1.Items.Add(freeDay);
+            }
         }
 
         private void instantReq_Click(object sender, EventArgs e)
@@ -53,12 +58,11 @@ namespace ProjectUSI.Doctor.View
                 {
                     selectedEl.Status = Model.Status.Accepted;
                     freeDays.Add(selectedEl);
-                
+
+                    _freeDaysRepository.Save();
+                    
                     listBox1.Items.Clear();
                     InitListBox();
-                
-                    File.WriteAllText(@"..\..\Doctor\Data\FreeDays.json", 
-                        JsonConvert.SerializeObject(freeDays));
                 }
                 else
                 {

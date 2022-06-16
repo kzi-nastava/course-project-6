@@ -9,15 +9,15 @@ namespace ProjectUSI.Polls.View
 {
     public partial class DoctorsPoolsWindow : Form
     {
-        private DoctorsPoolsRepository _doctorsPoolsRepository;
-        private DoctorsPoolsController _controller;
+        private DoctorsPollsRepository doctorsPollsRepository;
+        private DoctorsPollsController _controller;
         private MainRepository _mainRepository;
 
-        public DoctorsPoolsWindow(MainRepository mainRepository, DoctorsPoolsController doctorsPoolsController)
+        public DoctorsPoolsWindow(MainRepository mainRepository, DoctorsPollsController doctorsPoolsController)
         {
             _mainRepository = mainRepository;
             _controller = doctorsPoolsController;
-            _doctorsPoolsRepository = mainRepository.DoctorsPoolsRepository;
+            doctorsPollsRepository = mainRepository.DoctorsPollsRepository;
             InitializeComponent();
             InitComboBoxes();
         }
@@ -25,7 +25,7 @@ namespace ProjectUSI.Polls.View
 
         private void InitComboBoxes()
         {
-            foreach (DoctorQuery doctorQuery in _doctorsPoolsRepository.GetPools())
+            foreach (DoctorQuery doctorQuery in doctorsPollsRepository.GetPolls())
             {
                 lbDoctorPools.Items.Add(doctorQuery.ToString());
             }
@@ -34,11 +34,11 @@ namespace ProjectUSI.Polls.View
 
         private void btnMore_Click(object sender, EventArgs e)
         {
-            DoctorQuery doctorQuery = _doctorsPoolsRepository.GetPools()[lbDoctorPools.SelectedIndex];
-            DoctorsPoolsController doctorsPoolsController = new DoctorsPoolsController(_mainRepository, doctorQuery);
+            DoctorQuery doctorQuery = doctorsPollsRepository.GetPolls()[lbDoctorPools.SelectedIndex];
+            DoctorsPollsController doctorsPoolsController = new DoctorsPollsController(_mainRepository, doctorQuery);
             doctorsPoolsController.InitDoctor();
-            DoctorsPoolSingleWindow doctorsPoolSingleWindow =
-                new DoctorsPoolSingleWindow(_doctorsPoolsRepository, doctorQuery.doctor, doctorsPoolsController);
+            DoctorsPollSingleWindow doctorsPoolSingleWindow =
+                new DoctorsPollSingleWindow(doctorsPollsRepository, doctorQuery.doctor, doctorsPoolsController);
             doctorsPoolSingleWindow.Show();
         }
     }

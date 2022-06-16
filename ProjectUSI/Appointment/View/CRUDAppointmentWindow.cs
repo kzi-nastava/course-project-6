@@ -62,8 +62,7 @@ namespace ProjectUSI.Doctor.View
             List<Appointments> appointments = _appointmentsRepository.GetAppointments();
             appointments.Add(newAppointments);
             
-            File.WriteAllText(@"..\..\Doctor\Data\Appointments1.json", 
-                JsonConvert.SerializeObject(appointments));
+            _appointmentsRepository.Save();
             
             MessageBox.Show("Appointment is successfully created.","Success!", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);

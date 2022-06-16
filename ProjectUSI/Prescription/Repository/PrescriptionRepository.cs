@@ -14,7 +14,7 @@ namespace ProjectUSI.Doctor.Repository
 
         public PrescriptionRepository()
         {
-            string json = File.ReadAllText(@"..\..\Doctor\Data\Prescription.json");
+            string json = File.ReadAllText(@"..\..\Data\Prescription.json");
             List<Prescription> prescription = JsonConvert.DeserializeObject<List<Prescription>>(json);
             prescriptions = prescription;
         }
@@ -23,14 +23,11 @@ namespace ProjectUSI.Doctor.Repository
         {
             return this.prescriptions;
         }
-
-        // public List<Medicine> GetMedicines()
-        // {
-        //     string json2 = File.ReadAllText(@"..\..\Data\Medicine.json");
-        //     List<Medicine> medicine = JsonConvert.DeserializeObject<List<Medicine>>(json2);
-        //     medicines = medicine;
-        //     return medicines;
-        // }
         
-}
+        public void Save()
+        {
+            File.WriteAllText(@"..\..\Data\Prescription.json", 
+                JsonConvert.SerializeObject(prescriptions));
+        }
+    }
 }

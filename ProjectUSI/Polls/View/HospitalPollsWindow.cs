@@ -9,12 +9,12 @@ namespace ProjectUSI.Polls.View
 {
     public partial class HospitalPoolsWindow : Form
     {
-        private HospitalPoolsRepository _hospitalPoolsRepository;
-        private HospitalPoolsController _controller;
-        public HospitalPoolsWindow(MainRepository mainRepository, HospitalPoolsController hospitalPoolsController)
+        private HospitalPollsRepository _hospitalPoolsRepository;
+        private HospitalPollsController _controller;
+        public HospitalPoolsWindow(MainRepository mainRepository, HospitalPollsController hospitalPollsController)
         {
-            _controller = hospitalPoolsController;
-            _hospitalPoolsRepository = mainRepository.HospitalPoolsRepository;
+            _controller = hospitalPollsController;
+            _hospitalPoolsRepository = mainRepository.HospitalPollsRepository;
             InitializeComponent();
             InitAverages();
             InitComboBoxes();

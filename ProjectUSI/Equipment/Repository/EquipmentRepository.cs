@@ -1,24 +1,25 @@
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using ProjectUSI.Manager.Model;
+using ProjectUSI.Rooms.Model;
 
-namespace ProjectUSI.Manager.Repository
+
+namespace ProjectUSI.Equipment.Repository
 {
     public class EquipmentRepository
     {
-        private List<Equipment> _equipment;
+        private List<Model.Equipment> _equipment;
 
         public EquipmentRepository()
         {
             string json = File.ReadAllText(@"..\..\Data\Equipment.json");
-            List<Equipment> equipment = JsonConvert.DeserializeObject<List<Equipment>>(json);
+            List<Model.Equipment> equipment = JsonConvert.DeserializeObject<List<Model.Equipment>>(json);
             _equipment = equipment;
         }
 
         public void DecreaseQuantity(string id)
         {
-            foreach (Equipment equipment in _equipment)
+            foreach (Model.Equipment equipment in _equipment)
             {
                 if (equipment.Id.Equals(id) && equipment.Quantity!=0)
                 {
@@ -27,9 +28,9 @@ namespace ProjectUSI.Manager.Repository
             }
         }
 
-        private Equipment Find(Equipment equipment)
+        private Model.Equipment Find(Model.Equipment equipment)
         {
-            foreach (Equipment e in _equipment)
+            foreach (Model.Equipment e in _equipment)
             {
                 if (e.Equals(equipment))
                 {
@@ -40,22 +41,22 @@ namespace ProjectUSI.Manager.Repository
             return null;
         }
 
-        public void UpdateEquipmentRoom(Equipment equipment, Room room)
+        public void UpdateEquipmentRoom(Model.Equipment equipment, Room room)
         {
             this.Find(equipment).DeployedIn = room;
         }
-        public List<Equipment> GetEquipment()
+        public List<Model.Equipment> GetEquipment()
         {
             return this._equipment;
         }
-        public void SetEquipment(List<Equipment> equipment)
+        public void SetEquipment(List<Model.Equipment> equipment)
         {
             this._equipment = equipment;
         }
 
-        public Equipment GetEquipmentById(string id)
+        public Model.Equipment GetEquipmentById(string id)
         {
-            foreach (Equipment equipment in _equipment)
+            foreach (Model.Equipment equipment in _equipment)
             {
                 if (equipment.Id.Equals(id))
                 {

@@ -73,7 +73,7 @@ namespace ProjectUSI.Doctor.View
                 newReferral.ChosenDoctor = chosenDoctor.Text;
                 referrals.Add(newReferral);
 
-                File.WriteAllText(@"..\..\Doctor\Data\Referrals.json",
+                File.WriteAllText(@"..\..\Data\Referrals.json",
                     JsonConvert.SerializeObject(referrals));
 
                 MessageBox.Show("Referral is successfully given!", "Success!", MessageBoxButtons.OK,

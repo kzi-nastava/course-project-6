@@ -1,9 +1,10 @@
 using System;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
-using ProjectUSI.Manager.View;
+using ProjectUSI.Rooms.Model;
+using ProjectUSI.Rooms.Repository;
+using ProjectUSI.Rooms.View;
+using ProjectUSI.Users.Repository;
 
-namespace ProjectUSI.Manager.Controller
+namespace ProjectUSI.Rooms.Controller
 {
     public class RoomController
     {

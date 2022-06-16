@@ -33,16 +33,14 @@ namespace ProjectUSI.Doctor.View
         {
             List<Request> requests = _requestRepository.GetRequests();
             requests.Remove(_request);
-            File.WriteAllText(@"..\..\Data\MedicineRequests.json",
-                JsonConvert.SerializeObject(requests));
+            _requestRepository.Save();
             
             _request.Status = Status.Rejected;
             _request.Reason = reason.Text;
 
             requests.Add(_request);
             
-            File.WriteAllText(@"..\..\Data\MedicineRequests.json",
-                JsonConvert.SerializeObject(requests));
+            _requestRepository.Save();
 
             MessageBox.Show("Chosen medicine is rejected.","Success!",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);

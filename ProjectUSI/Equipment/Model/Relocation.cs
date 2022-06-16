@@ -1,7 +1,7 @@
 using System;
-using Newtonsoft.Json.Serialization;
+using ProjectUSI.Rooms.Model;
 
-namespace ProjectUSI.Manager.Model
+namespace ProjectUSI.Equipment.Model
 {
     [Serializable()]
     public class Relocation

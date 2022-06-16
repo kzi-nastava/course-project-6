@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ProjectUSI.Manager.Model
+namespace ProjectUSI.Medicine.Model
 {
     public class Request
     {

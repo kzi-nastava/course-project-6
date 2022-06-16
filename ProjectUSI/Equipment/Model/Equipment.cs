@@ -1,4 +1,6 @@
-namespace ProjectUSI.Manager.Model
+using ProjectUSI.Rooms.Model;
+
+namespace ProjectUSI.Equipment.Model
 {
     public class Equipment
     {

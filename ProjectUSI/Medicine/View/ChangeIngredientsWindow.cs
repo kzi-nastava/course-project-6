@@ -1,18 +1,15 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Windows.Forms;
-using Newtonsoft.Json;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
+using ProjectUSI.Medicine.Repository;
+using ProjectUSI.Users.Repository;
 
-namespace ProjectUSI.Manager.View
+namespace ProjectUSI.Medicine.View
 {
     public partial class ChangeIngredientsWindow : Form
     {
-        private Medicine _medicine;
+        private Model.Medicine _medicine;
         private MedicineRepository _medicineRepository;
-        public ChangeIngredientsWindow(String itemName, Medicine medicine, MainRepository mainRepository)
+        public ChangeIngredientsWindow(String itemName, Model.Medicine medicine, MainRepository mainRepository)
         {
             _medicine = medicine;
             _medicineRepository = mainRepository.MedicineRepository;

@@ -1,10 +1,10 @@
 using System;
 using System.Windows.Forms;
-using ProjectUSI.Manager.Controller;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
+using ProjectUSI.Rooms.Controller;
+using ProjectUSI.Rooms.Model;
+using ProjectUSI.Users.Repository;
 
-namespace ProjectUSI.Manager.View
+namespace ProjectUSI.Rooms.View
 {
     public partial class AddRoomWindow : Form
     {

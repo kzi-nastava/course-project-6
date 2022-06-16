@@ -36,8 +36,7 @@ namespace ProjectUSI.Doctor.View
                 {
                     freeDays.Add(newFreeDay);
             
-                    File.WriteAllText(@"..\..\Doctor\Data\FreeDays.json", 
-                        JsonConvert.SerializeObject(freeDays));
+                    _freeDaysRepository.Save();
             
                     MessageBox.Show("New request is successfully sent.", "Success!",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);

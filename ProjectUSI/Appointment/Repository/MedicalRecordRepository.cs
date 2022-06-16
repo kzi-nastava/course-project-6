@@ -14,13 +14,19 @@ namespace ProjectUSI.Doctor.Repository
         
         public MedicalRecordRepository()
         {
-            string json = File.ReadAllText(@"..\..\Doctor\Data\MedicalRecords.json");
+            string json = File.ReadAllText(@"..\..\Data\MedicalRecords.json");
             List<MedicalRecord> medicalRecord = JsonConvert.DeserializeObject<List<MedicalRecord>>(json);
             medicalRecords = medicalRecord;
         }
         public List<MedicalRecord> GetMedicalRecords()
         {
             return this.medicalRecords;
+        }
+        
+        public void Save()
+        {
+            File.WriteAllText(@"..\..\Data\MedicalRecords.json", 
+                JsonConvert.SerializeObject(medicalRecords));
         }
     }
 }

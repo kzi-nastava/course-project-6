@@ -1,23 +1,19 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using Newtonsoft.Json;
-using ProjectUSI.Doctor.Model;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
+using ProjectUSI.Medicine.Repository;
+using ProjectUSI.Users.Repository;
 
-namespace ProjectUSI.Manager.View
+namespace ProjectUSI.Medicine.View
 {
 
     public partial class CRUDIngredientsView : Form
     {
         private MedicineRepository _medicineRepository;
         private MainRepository _mainRepository;
-        private Medicine _medicine;
+        private Model.Medicine _medicine;
 
-        public CRUDIngredientsView(Medicine medicine, MainRepository mainRepository)
+        public CRUDIngredientsView(Model.Medicine medicine, MainRepository mainRepository)
         {
             _mainRepository = mainRepository;
             _medicineRepository = mainRepository.MedicineRepository;

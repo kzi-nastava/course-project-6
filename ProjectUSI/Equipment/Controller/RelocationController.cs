@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
-using ProjectUSI.Manager.Model;
-using ProjectUSI.Manager.Repository;
-using ProjectUSI.Manager.View;
+using ProjectUSI.Equipment.Model;
+using ProjectUSI.Equipment.Repository;
+using ProjectUSI.Equipment.View;
+using ProjectUSI.Rooms.Model;
+using ProjectUSI.Users.Repository;
 
-namespace ProjectUSI.Manager.Controller
+namespace ProjectUSI.Equipment.Controller
 {
     public class RelocationController
     {

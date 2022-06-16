@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace ProjectUSI.Manager.View
+namespace ProjectUSI.Medicine.View
 {
     partial class ChangeIngredientsWindow
     {

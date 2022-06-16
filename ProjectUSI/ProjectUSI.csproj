@@ -37,6 +37,8 @@
           <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
           <Private>True</Private>
         </Reference>
+        <Reference Include="PresentationCore" />
+        <Reference Include="PresentationFramework" />
         <Reference Include="System" />
         <Reference Include="System.Core" />
         <Reference Include="System.Xml.Linq" />
@@ -48,281 +50,265 @@
         <Reference Include="System.Net.Http" />
         <Reference Include="System.Windows.Forms" />
         <Reference Include="System.Xml" />
+        <Reference Include="WindowsBase" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Doctor\Controller\AppointmentsController.cs" />
-        <Compile Include="Doctor\Controller\FreeDaysController.cs" />
-        <Compile Include="Doctor\Controller\MedicalRecordController.cs" />
-        <Compile Include="Doctor\Controller\PrescriptionController.cs" />
-        <Compile Include="Doctor\Controller\ReferralController.cs" />
-        <Compile Include="Doctor\Model\Appointments.cs" />
-        <Compile Include="Doctor\Model\FreeDays.cs" />
-        <Compile Include="Doctor\Model\MedicalRecord.cs" />
-        <Compile Include="Doctor\Model\Prescription.cs" />
-        <Compile Include="Doctor\Model\Referral.cs" />
-        <Compile Include="Doctor\Repository\AppointmentsRepository.cs" />
-        <Compile Include="Doctor\Repository\FreeDaysRepository.cs" />
-        <Compile Include="Doctor\Repository\MedicalRecordRepository.cs" />
-        <Compile Include="Doctor\Repository\PrescriptionRepository.cs" />
-        <Compile Include="Doctor\Repository\ReferralRepository.cs" />
-        <Compile Include="Doctor\View\AppointmentWindow.cs" />
-        <Compile Include="Doctor\View\AppointmentWindow.Designer.cs" />
-        <Compile Include="Doctor\View\CRUDAppointmentWindow.cs" />
-        <Compile Include="Doctor\View\CRUDAppointmentWindow.Designer.cs" />
-        <Compile Include="Doctor\View\DoctorMainWindow.cs" />
-        <Compile Include="Doctor\View\DoctorMainWindow.Designer.cs" />
-        <Compile Include="Doctor\View\FreeDaysWindow.cs">
+        <Compile Include="Appointment\Controller\AppointmentsController.cs" />
+        <Compile Include="Appointment\Controller\MedicalRecordController.cs" />
+        <Compile Include="Appointment\Model\Appointments.cs" />
+        <Compile Include="Appointment\Model\MedicalRecord.cs" />
+        <Compile Include="Appointment\Repository\AppointmentsRepository.cs" />
+        <Compile Include="Appointment\Repository\MedicalRecordRepository.cs" />
+        <Compile Include="Appointment\View\AppointmentWindow.cs" />
+        <Compile Include="Appointment\View\AppointmentWindow.Designer.cs" />
+        <Compile Include="Appointment\View\CRUDAppointmentWindow.cs" />
+        <Compile Include="Appointment\View\CRUDAppointmentWindow.Designer.cs" />
+        <Compile Include="Appointment\View\ScheduleWindow.cs" />
+        <Compile Include="Appointment\View\ScheduleWindow.Designer.cs" />
+        <Compile Include="Appointment\View\UpdateAppointmentWindow.cs" />
+        <Compile Include="Appointment\View\UpdateAppointmentWindow.Designer.cs" />
+        <Compile Include="Equipment\Controller\EquipmentController.cs" />
+        <Compile Include="Equipment\Controller\RelocationController.cs" />
+        <Compile Include="Equipment\Model\Equipment.cs" />
+        <Compile Include="Equipment\Model\EquipmentType.cs" />
+        <Compile Include="Equipment\Model\Quantity.cs" />
+        <Compile Include="Equipment\Model\Relocation.cs" />
+        <Compile Include="Equipment\Repository\EquipmentRepository.cs" />
+        <Compile Include="Equipment\Repository\RelocationRepository.cs" />
+        <Compile Include="Equipment\View\EquipmentWindow.cs">
           <SubType>Form</SubType>
         </Compile>
-        <Compile Include="Doctor\View\FreeDaysWindow.Designer.cs">
-          <DependentUpon>FreeDaysWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Doctor\View\NewFreeDayWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Doctor\View\NewFreeDayWindow.Designer.cs">
-          <DependentUpon>NewFreeDayWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Doctor\View\PrescriptionWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Doctor\View\PrescriptionWindow.Designer.cs">
-          <DependentUpon>PrescriptionWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Doctor\View\ReferralWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Doctor\View\ReferralWindow.Designer.cs">
-          <DependentUpon>ReferralWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Doctor\View\ScheduleWindow.cs" />
-        <Compile Include="Doctor\View\ScheduleWindow.Designer.cs" />
-        <Compile Include="Doctor\View\UpdateAppointmentWindow.cs" />
-        <Compile Include="Doctor\View\UpdateAppointmentWindow.Designer.cs" />
-        <Compile Include="Doctor\View\UsedEquimpentWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Doctor\View\UsedEquimpentWindow.Designer.cs">
-          <DependentUpon>UsedEquimpentWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Doctor\View\VerifyMedicines.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Doctor\View\VerifyMedicines.Designer.cs">
-          <DependentUpon>VerifyMedicines.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Doctor\View\VerifyMedicineWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Doctor\View\VerifyMedicineWindow.Designer.cs">
-          <DependentUpon>VerifyMedicineWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Manager\Controller\AddRoomController.cs" />
-        <Compile Include="Manager\Controller\DoctorsPoolsController.cs" />
-        <Compile Include="Manager\Controller\EquipmentController.cs" />
-        <Compile Include="Manager\Controller\HospitalPoolsController.cs" />
-        <Compile Include="Manager\Controller\MedicineController.cs" />
-        <Compile Include="Manager\Controller\RelocationController.cs" />
-        <Compile Include="Manager\Controller\RenovationController.cs" />
-        <Compile Include="Manager\Controller\RequestController.cs" />
-        <Compile Include="Manager\Controller\RoomController.cs" />
-        <Compile Include="Manager\Model\Equipment.cs" />
-        <Compile Include="Manager\Model\EquipmentType.cs" />
-        <Compile Include="Manager\Model\Medicine.cs" />
-        <Compile Include="Manager\Model\Quantity.cs" />
-        <Compile Include="Manager\Model\Queries.cs" />
-        <Compile Include="Manager\Model\Relocation.cs" />
-        <Compile Include="Manager\Model\Renovation.cs" />
-        <Compile Include="Manager\Model\RenovationType.cs" />
-        <Compile Include="Manager\Model\Request.cs" />
-        <Compile Include="Manager\Model\Room.cs" />
-        <Compile Include="Manager\Model\RoomPurpose.cs" />
-        <Compile Include="Manager\Repository\DoctorsPoolsRepository.cs" />
-        <Compile Include="Manager\Repository\EquipmentRepository.cs" />
-        <Compile Include="Manager\Repository\HospitalPoolsRepository.cs" />
-        <Compile Include="Manager\Repository\MainRepository.cs" />
-        <Compile Include="Manager\Repository\MedicineRepository.cs" />
-        <Compile Include="Manager\Repository\RelocationRepository.cs" />
-        <Compile Include="Manager\Repository\RenovationRepository.cs" />
-        <Compile Include="Manager\Repository\RequestRepository.cs" />
-        <Compile Include="Manager\Repository\RoomRepository.cs" />
-        <Compile Include="Manager\View\AddNewIngredientView.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Manager\View\AddNewIngredientView.Designer.cs">
-          <DependentUpon>AddNewIngredientView.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Manager\View\AddNewMedicineWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Manager\View\AddNewMedicineWindow.Designer.cs">
-          <DependentUpon>AddNewMedicineWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Manager\View\AddRoomWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Manager\View\AddRoomWindow.Designer.cs">
-          <DependentUpon>AddRoomWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Manager\View\ChangeIngredientsWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Manager\View\ChangeIngredientsWindow.Designer.cs">
-          <DependentUpon>ChangeIngredientsWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Manager\View\ChangeRequestWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Manager\View\ChangeRequestWindow.Designer.cs">
-          <DependentUpon>ChangeRequestWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Manager\View\ConfirmRenovationWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Manager\View\ConfirmRenovationWindow.Designer.cs">
-          <DependentUpon>ConfirmRenovationWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Manager\View\CRUDIngredientsView.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Manager\View\CRUDIngredientsView.Designer.cs">
-          <DependentUpon>CRUDIngredientsView.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Manager\View\DoctorsPoolSingleWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Manager\View\DoctorsPoolSingleWindow.Designer.cs">
-          <DependentUpon>DoctorsPoolSingleWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Manager\View\DoctorsPoolsWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Manager\View\DoctorsPoolsWindow.Designer.cs">
-          <DependentUpon>DoctorsPoolsWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Manager\View\HospitalPoolsWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Manager\View\HospitalPoolsWindow.Designer.cs">
-          <DependentUpon>HospitalPoolsWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Manager\View\MedicineWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Manager\View\MedicineWindow.Designer.cs">
-          <DependentUpon>MedicineWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Manager\View\RelocateWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Manager\View\RelocateWindow.Designer.cs">
-          <DependentUpon>RelocateWindow.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Manager\View\EquipmentWindow.cs">
-          <SubType>Form</SubType>
-        </Compile>
-        <Compile Include="Manager\View\EquipmentWindow.Designer.cs">
+        <Compile Include="Equipment\View\EquipmentWindow.Designer.cs">
           <DependentUpon>EquipmentWindow.cs</DependentUpon>
         </Compile>
-        <Compile Include="Manager\View\ManagerMainWindow.cs" />
-        <Compile Include="Manager\View\ManagerMainWindow.Designer.cs" />
-        <Compile Include="Manager\View\RenovationWindow.cs">
+        <Compile Include="Equipment\View\RelocateWindow.cs">
           <SubType>Form</SubType>
         </Compile>
-        <Compile Include="Manager\View\RenovationWindow.Designer.cs">
-          <DependentUpon>RenovationWindow.cs</DependentUpon>
+        <Compile Include="Equipment\View\RelocateWindow.Designer.cs">
+          <DependentUpon>RelocateWindow.cs</DependentUpon>
         </Compile>
-        <Compile Include="Manager\View\RequestWindow.cs">
+        <Compile Include="Equipment\View\UsedEquimpentWindow.cs">
           <SubType>Form</SubType>
         </Compile>
-        <Compile Include="Manager\View\RequestWindow.Designer.cs">
+        <Compile Include="Equipment\View\UsedEquimpentWindow.Designer.cs">
+          <DependentUpon>UsedEquimpentWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="FreeDays\Controller\FreeDaysController.cs" />
+        <Compile Include="FreeDays\Model\FreeDays.cs" />
+        <Compile Include="FreeDays\Repository\FreeDaysRepository.cs" />
+        <Compile Include="FreeDays\View\FreeDaysWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="FreeDays\View\FreeDaysWindow.Designer.cs">
+          <DependentUpon>FreeDaysWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="FreeDays\View\NewFreeDayWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="FreeDays\View\NewFreeDayWindow.Designer.cs">
+          <DependentUpon>NewFreeDayWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Medicine\Controller\MedicineController.cs" />
+        <Compile Include="Medicine\Controller\RequestController.cs" />
+        <Compile Include="Medicine\Model\Medicine.cs" />
+        <Compile Include="Medicine\Model\Request.cs" />
+        <Compile Include="Medicine\Repository\MedicineRepository.cs" />
+        <Compile Include="Medicine\Repository\RequestRepository.cs" />
+        <Compile Include="Medicine\View\AddNewIngredientView.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Medicine\View\AddNewIngredientView.Designer.cs">
+          <DependentUpon>AddNewIngredientView.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Medicine\View\AddNewMedicineWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Medicine\View\AddNewMedicineWindow.Designer.cs">
+          <DependentUpon>AddNewMedicineWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Medicine\View\ChangeIngredientsWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Medicine\View\ChangeIngredientsWindow.Designer.cs">
+          <DependentUpon>ChangeIngredientsWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Medicine\View\ChangeRequestWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Medicine\View\ChangeRequestWindow.Designer.cs">
+          <DependentUpon>ChangeRequestWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Medicine\View\CRUDIngredientsView.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Medicine\View\CRUDIngredientsView.Designer.cs">
+          <DependentUpon>CRUDIngredientsView.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Medicine\View\MedicineWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Medicine\View\MedicineWindow.Designer.cs">
+          <DependentUpon>MedicineWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Medicine\View\RequestWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Medicine\View\RequestWindow.Designer.cs">
           <DependentUpon>RequestWindow.cs</DependentUpon>
         </Compile>
-        <Compile Include="Manager\View\RoomsWindow.cs" />
-        <Compile Include="Manager\View\RoomsWindow.Designer.cs" />
+        <Compile Include="Medicine\View\VerifyMedicines.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Medicine\View\VerifyMedicines.Designer.cs">
+          <DependentUpon>VerifyMedicines.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Medicine\View\VerifyMedicineWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Medicine\View\VerifyMedicineWindow.Designer.cs">
+          <DependentUpon>VerifyMedicineWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Polls\Controller\DoctorsPollsController.cs" />
+        <Compile Include="Polls\Controller\HospitalPollsController.cs" />
+        <Compile Include="Polls\Model\Queries.cs" />
+        <Compile Include="Polls\Repository\DoctorsPollsRepository.cs" />
+        <Compile Include="Polls\Repository\HospitalPollsRepository.cs" />
+        <Compile Include="Polls\View\DoctorsPollSingleWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Polls\View\DoctorsPollSingleWindow.Designer.cs">
+          <DependentUpon>DoctorsPollSingleWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Polls\View\DoctorsPollsWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Polls\View\DoctorsPollsWindow.Designer.cs">
+          <DependentUpon>DoctorsPollsWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Polls\View\HospitalPollsWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Polls\View\HospitalPollsWindow.Designer.cs">
+          <DependentUpon>HospitalPollsWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Prescription\Controller\PrescriptionController.cs" />
+        <Compile Include="Prescription\Model\Prescription.cs" />
+        <Compile Include="Prescription\Repository\PrescriptionRepository.cs" />
+        <Compile Include="Prescription\View\PrescriptionWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Prescription\View\PrescriptionWindow.Designer.cs">
+          <DependentUpon>PrescriptionWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Referral\Controller\ReferralController.cs" />
+        <Compile Include="Referral\Model\Referral.cs" />
+        <Compile Include="Referral\Repository\ReferralRepository.cs" />
+        <Compile Include="Referral\View\ReferralWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Referral\View\ReferralWindow.Designer.cs">
+          <DependentUpon>ReferralWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Rooms\Controller\AddRoomController.cs" />
+        <Compile Include="Rooms\Controller\RenovationController.cs" />
+        <Compile Include="Rooms\Controller\RoomController.cs" />
+        <Compile Include="Rooms\Model\Renovation.cs" />
+        <Compile Include="Rooms\Model\RenovationType.cs" />
+        <Compile Include="Rooms\Model\Room.cs" />
+        <Compile Include="Rooms\Model\RoomPurpose.cs" />
+        <Compile Include="Rooms\Repository\RenovationRepository.cs" />
+        <Compile Include="Rooms\Repository\RoomRepository.cs" />
+        <Compile Include="Rooms\View\AddRoomWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Rooms\View\AddRoomWindow.Designer.cs">
+          <DependentUpon>AddRoomWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Rooms\View\ConfirmRenovationWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Rooms\View\ConfirmRenovationWindow.Designer.cs">
+          <DependentUpon>ConfirmRenovationWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Rooms\View\RenovationWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Rooms\View\RenovationWindow.Designer.cs">
+          <DependentUpon>RenovationWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Rooms\View\RoomsWindow.cs" />
+        <Compile Include="Rooms\View\RoomsWindow.Designer.cs" />
         <Compile Include="Users\Controller\UserController.cs" />
         <Compile Include="Users\Model\Role.cs" />
         <Compile Include="Users\Model\User.cs" />
         <Compile Include="Users\Model\UsersRepository.cs" />
+        <Compile Include="Users\Repository\MainRepository.cs" />
+        <Compile Include="Users\View\DoctorMainWindow.cs" />
+        <Compile Include="Users\View\DoctorMainWindow.Designer.cs" />
         <Compile Include="Users\View\LoginWindow.cs">
           <SubType>Form</SubType>
         </Compile>
         <Compile Include="Users\View\LoginWindow.Designer.cs">
           <DependentUpon>LoginWindow.cs</DependentUpon>
         </Compile>
-        <EmbeddedResource Include="Doctor\View\AppointmentWindow.resx" />
-        <EmbeddedResource Include="Doctor\View\CRUDAppointmentWindow.resx" />
-        <EmbeddedResource Include="Doctor\View\DoctorMainWindow.resx" />
-        <EmbeddedResource Include="Doctor\View\FreeDaysWindow.resx">
-          <DependentUpon>FreeDaysWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Doctor\View\NewFreeDayWindow.resx">
-          <DependentUpon>NewFreeDayWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Doctor\View\ReferralWindow.resx">
-          <DependentUpon>ReferralWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Doctor\View\ScheduleWindow.resx" />
-        <EmbeddedResource Include="Doctor\View\UpdateAppointmentWindow.resx" />
-        <EmbeddedResource Include="Doctor\View\UsedEquimpentWindow.resx">
-          <DependentUpon>UsedEquimpentWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Doctor\View\VerifyMedicines.resx">
-          <DependentUpon>VerifyMedicines.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Doctor\View\VerifyMedicineWindow.resx">
-          <DependentUpon>VerifyMedicineWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\AddNewIngredientView.resx">
-          <DependentUpon>AddNewIngredientView.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\AddNewMedicineWindow.resx">
-          <DependentUpon>AddNewMedicineWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\AddRoomWindow.resx">
-          <DependentUpon>AddRoomWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\ChangeIngredientsWindow.resx">
-          <DependentUpon>ChangeIngredientsWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\ChangeRequestWindow.resx">
-          <DependentUpon>ChangeRequestWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\ConfirmRenovationWindow.resx">
-          <DependentUpon>ConfirmRenovationWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\CRUDIngredientsView.resx">
-          <DependentUpon>CRUDIngredientsView.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\DoctorsPoolSingleWindow.resx">
-          <DependentUpon>DoctorsPoolSingleWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\DoctorsPoolsWindow.resx">
-          <DependentUpon>DoctorsPoolsWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\EquipmentWindow.resx">
+        <Compile Include="Users\View\ManagerMainWindow.cs" />
+        <Compile Include="Users\View\ManagerMainWindow.Designer.cs" />
+        <EmbeddedResource Include="Appointment\View\AppointmentWindow.resx" />
+        <EmbeddedResource Include="Appointment\View\CRUDAppointmentWindow.resx" />
+        <EmbeddedResource Include="Appointment\View\ScheduleWindow.resx" />
+        <EmbeddedResource Include="Appointment\View\UpdateAppointmentWindow.resx" />
+        <EmbeddedResource Include="Equipment\View\EquipmentWindow.resx">
           <DependentUpon>EquipmentWindow.cs</DependentUpon>
         </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\HospitalPoolsWindow.resx">
-          <DependentUpon>HospitalPoolsWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\ManagerMainWindow.resx" />
-        <EmbeddedResource Include="Manager\View\MedicineWindow.resx">
-          <DependentUpon>MedicineWindow.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\RelocateWindow.resx">
+        <EmbeddedResource Include="Equipment\View\RelocateWindow.resx">
           <DependentUpon>RelocateWindow.cs</DependentUpon>
         </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\RenovationWindow.resx">
-          <DependentUpon>RenovationWindow.cs</DependentUpon>
+        <EmbeddedResource Include="Equipment\View\UsedEquimpentWindow.resx">
+          <DependentUpon>UsedEquimpentWindow.cs</DependentUpon>
         </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\RequestWindow.resx">
+        <EmbeddedResource Include="FreeDays\View\FreeDaysWindow.resx">
+          <DependentUpon>FreeDaysWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="FreeDays\View\NewFreeDayWindow.resx">
+          <DependentUpon>NewFreeDayWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Medicine\View\AddNewIngredientView.resx">
+          <DependentUpon>AddNewIngredientView.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Medicine\View\AddNewMedicineWindow.resx">
+          <DependentUpon>AddNewMedicineWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Medicine\View\ChangeIngredientsWindow.resx">
+          <DependentUpon>ChangeIngredientsWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Medicine\View\ChangeRequestWindow.resx">
+          <DependentUpon>ChangeRequestWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Medicine\View\CRUDIngredientsView.resx">
+          <DependentUpon>CRUDIngredientsView.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Medicine\View\MedicineWindow.resx">
+          <DependentUpon>MedicineWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Medicine\View\RequestWindow.resx">
           <DependentUpon>RequestWindow.cs</DependentUpon>
         </EmbeddedResource>
-        <EmbeddedResource Include="Manager\View\RoomsWindow.resx">
-          <DependentUpon>RoomsWindow.cs</DependentUpon>
+        <EmbeddedResource Include="Medicine\View\VerifyMedicines.resx">
+          <DependentUpon>VerifyMedicines.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Medicine\View\VerifyMedicineWindow.resx">
+          <DependentUpon>VerifyMedicineWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Polls\View\DoctorsPollSingleWindow.resx">
+          <DependentUpon>DoctorsPollSingleWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Polls\View\DoctorsPollsWindow.resx">
+          <DependentUpon>DoctorsPollsWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Polls\View\HospitalPollsWindow.resx">
+          <DependentUpon>HospitalPollsWindow.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
@@ -333,9 +319,26 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="Referral\View\ReferralWindow.resx">
+          <DependentUpon>ReferralWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Rooms\View\AddRoomWindow.resx">
+          <DependentUpon>AddRoomWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Rooms\View\ConfirmRenovationWindow.resx">
+          <DependentUpon>ConfirmRenovationWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Rooms\View\RenovationWindow.resx">
+          <DependentUpon>RenovationWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Rooms\View\RoomsWindow.resx">
+          <DependentUpon>RoomsWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Users\View\DoctorMainWindow.resx" />
         <EmbeddedResource Include="Users\View\LoginWindow.resx">
           <DependentUpon>LoginWindow.cs</DependentUpon>
         </EmbeddedResource>
+        <EmbeddedResource Include="Users\View\ManagerMainWindow.resx" />
         <None Include="packages.config" />
         <None Include="Properties\Settings.settings">
             <Generator>SettingsSingleFileGenerator</Generator>
@@ -351,22 +354,27 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="Data\appointments.json" />
+      <Content Include="Data\Appointments1.json" />
       <Content Include="Data\Equipment.json" />
+      <Content Include="Data\FreeDaysRequests.json" />
+      <Content Include="Data\MedicalRecords.json" />
       <Content Include="Data\Medicaments.json" />
       <Content Include="Data\Medicine.json" />
       <Content Include="Data\MedicineRequests.json" />
+      <Content Include="Data\patients (1).json" />
+      <Content Include="Data\Prescription.json" />
+      <Content Include="Data\Referrals.json" />
       <Content Include="Data\Relocations.json" />
       <Content Include="Data\Renovation.json" />
       <Content Include="Data\Rooms.json" />
       <Content Include="Data\Users.json" />
-      <Content Include="Doctor\Data\appointments.json" />
-      <Content Include="Doctor\Data\Appointments1.json" />
-      <Content Include="Doctor\Data\FreeDays.json" />
-      <Content Include="Doctor\Data\MedicalRecords.json" />
-      <Content Include="Doctor\Data\patients (1).json" />
-      <Content Include="Doctor\Data\Prescription.json" />
-      <Content Include="Doctor\Data\Referrals.json" />
-      <Content Include="Doctor\Data\users.json" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="Patient\Patient.csproj">
+        <Project>{e9a823e0-969c-47c1-ab3a-9598426abfc0}</Project>
+        <Name>Patient</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

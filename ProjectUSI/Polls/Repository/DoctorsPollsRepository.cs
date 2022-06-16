@@ -5,18 +5,18 @@ using Patients.Models;
 
 namespace ProjectUSI.Polls.Repository
 {
-    public class DoctorsPoolsRepository
+    public class DoctorsPollsRepository
     {
         private List<DoctorQuery> _doctorQueries;
         
-        public DoctorsPoolsRepository()
+        public DoctorsPollsRepository()
         {
             string json = File.ReadAllText(@"..\..\Data\doctorQueries.json");
             List<DoctorQuery> doctorQueries = JsonConvert.DeserializeObject<List<DoctorQuery>>(json);
             _doctorQueries = doctorQueries;
         }
 
-        public List<DoctorQuery> GetPools()
+        public List<DoctorQuery> GetPolls()
         {
             return _doctorQueries;
         }

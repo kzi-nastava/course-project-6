@@ -1,10 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
-using ProjectUSI.Manager.Model;
+using ProjectUSI.Rooms.Model;
 
-namespace ProjectUSI.Manager.Repository
+namespace ProjectUSI.Rooms.Repository
 {
     public class RenovationRepository
     {

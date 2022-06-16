@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace ProjectUSI.Polls.View
 {
-    partial class DoctorsPoolSingleWindow
+    partial class DoctorsPollSingleWindow
     {
         /// <summary>
         /// Required designer variable.

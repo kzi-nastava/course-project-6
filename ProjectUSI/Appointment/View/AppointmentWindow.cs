@@ -74,17 +74,17 @@ namespace ProjectUSI.Doctor.View
             medicalRecords.Remove(toBeDeleted);
             medicalRecords.Add(newMedicalRecord);
             
-            File.WriteAllText(@"..\..\Doctor\Data\MedicalRecords.json",
-                JsonConvert.SerializeObject(medicalRecords));
-            
+            _medicalRecordRepository.Save();
+
             MessageBox.Show("Medical record is successfully modified.", "Success!", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
         
         private void buttonPrescription_Click(object sender, EventArgs e)
         {
-            string allergens = textBox9.Text;
-            PrescriptionWindow prescriptionWindow = new PrescriptionWindow(_medicalRecordRepository, allergens);
+            string email = textBox3.Text;
+            string PatientEmail = email;
+            PrescriptionWindow prescriptionWindow = new PrescriptionWindow(_medicalRecordRepository, PatientEmail);
             prescriptionWindow.Show();
         }
 
