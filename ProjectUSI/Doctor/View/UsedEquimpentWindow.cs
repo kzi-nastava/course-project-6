@@ -46,17 +46,17 @@ namespace ProjectUSI.Doctor.View
                 listBox1.Items.Add(roomEquipments.ElementAt(i));
             }
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonDecrease_Click(object sender, EventArgs e)
         {
             try
             {
                 Equipment usedEquipment;
+                
                 int index = listBox1.SelectedIndex;
                 usedEquipment = roomEquipments.ElementAt(index);
-                
                 List<Equipment> equipments = _equipmentRepository.GetEquipment();
-                equipments.Remove(usedEquipment);
                 
+                equipments.Remove(usedEquipment);
                 --usedEquipment.Quantity;
                 equipments.Add(usedEquipment);
                 

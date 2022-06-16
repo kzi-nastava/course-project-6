@@ -53,7 +53,6 @@ C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\P
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.AddNewMedicineWindow.resources
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.ChangeIngredientsWindow.resources
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.ConfirmRenovationWindow.resources
-C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.CRUDMedicineView.resources
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.MedicineWindow.resources
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.RenovationWindow.resources
 C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.VerifyMedicines.resources
@@ -102,3 +101,12 @@ C:\Users\ANJA\Desktop\USIProjekat\course-project-6\ProjectUSI\obj\Debug\ProjectU
 C:\Users\ANJA\Desktop\USIProjekat\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.HospitalPoolsWindow.resources
 C:\Users\ANJA\Desktop\USIProjekat\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.DoctorsPoolsWindow.resources
 C:\Users\ANJA\Desktop\USIProjekat\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.DoctorsPoolSingleWindow.resources
+C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.FreeDaysWindow.resources
+C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.UsedEquimpentWindow.resources
+C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.ChangeRequestWindow.resources
+C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.CRUDIngredientsView.resources
+C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.DoctorsPoolSingleWindow.resources
+C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.DoctorsPoolsWindow.resources
+C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.HospitalPoolsWindow.resources
+C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Manager.View.RequestWindow.resources
+C:\Users\anita\OneDrive\Dokumenti\GitHub\course-project-6\ProjectUSI\obj\Debug\ProjectUSI.Doctor.View.NewFreeDayWindow.resources
