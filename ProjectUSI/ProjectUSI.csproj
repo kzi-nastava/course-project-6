@@ -51,14 +51,17 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Doctor\Controller\AppointmentsController.cs" />
+        <Compile Include="Doctor\Controller\FreeDaysController.cs" />
         <Compile Include="Doctor\Controller\MedicalRecordController.cs" />
         <Compile Include="Doctor\Controller\PrescriptionController.cs" />
         <Compile Include="Doctor\Controller\ReferralController.cs" />
         <Compile Include="Doctor\Model\Appointments.cs" />
+        <Compile Include="Doctor\Model\FreeDays.cs" />
         <Compile Include="Doctor\Model\MedicalRecord.cs" />
         <Compile Include="Doctor\Model\Prescription.cs" />
         <Compile Include="Doctor\Model\Referral.cs" />
         <Compile Include="Doctor\Repository\AppointmentsRepository.cs" />
+        <Compile Include="Doctor\Repository\FreeDaysRepository.cs" />
         <Compile Include="Doctor\Repository\MedicalRecordRepository.cs" />
         <Compile Include="Doctor\Repository\PrescriptionRepository.cs" />
         <Compile Include="Doctor\Repository\ReferralRepository.cs" />
@@ -68,6 +71,18 @@
         <Compile Include="Doctor\View\CRUDAppointmentWindow.Designer.cs" />
         <Compile Include="Doctor\View\DoctorMainWindow.cs" />
         <Compile Include="Doctor\View\DoctorMainWindow.Designer.cs" />
+        <Compile Include="Doctor\View\FreeDaysWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Doctor\View\FreeDaysWindow.Designer.cs">
+          <DependentUpon>FreeDaysWindow.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Doctor\View\NewFreeDayWindow.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Doctor\View\NewFreeDayWindow.Designer.cs">
+          <DependentUpon>NewFreeDayWindow.cs</DependentUpon>
+        </Compile>
         <Compile Include="Doctor\View\PrescriptionWindow.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -240,6 +255,12 @@
         <EmbeddedResource Include="Doctor\View\AppointmentWindow.resx" />
         <EmbeddedResource Include="Doctor\View\CRUDAppointmentWindow.resx" />
         <EmbeddedResource Include="Doctor\View\DoctorMainWindow.resx" />
+        <EmbeddedResource Include="Doctor\View\FreeDaysWindow.resx">
+          <DependentUpon>FreeDaysWindow.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Doctor\View\NewFreeDayWindow.resx">
+          <DependentUpon>NewFreeDayWindow.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Doctor\View\ReferralWindow.resx">
           <DependentUpon>ReferralWindow.cs</DependentUpon>
         </EmbeddedResource>
@@ -340,6 +361,7 @@
       <Content Include="Data\Users.json" />
       <Content Include="Doctor\Data\appointments.json" />
       <Content Include="Doctor\Data\Appointments1.json" />
+      <Content Include="Doctor\Data\FreeDays.json" />
       <Content Include="Doctor\Data\MedicalRecords.json" />
       <Content Include="Doctor\Data\patients (1).json" />
       <Content Include="Doctor\Data\Prescription.json" />

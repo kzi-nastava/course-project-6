@@ -32,12 +32,12 @@ namespace ProjectUSI.Doctor.View
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,19 @@ namespace ProjectUSI.Doctor.View
             this.panel1.Size = new System.Drawing.Size(386, 409);
             this.panel1.TabIndex = 0;
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.Info;
+            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button5.Location = new System.Drawing.Point(25, 101);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(327, 67);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Add new check up";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.Info;
@@ -69,14 +82,16 @@ namespace ProjectUSI.Doctor.View
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.SystemColors.Info;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button4.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.button4.Location = new System.Drawing.Point(25, 247);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(328, 66);
             this.button4.TabIndex = 0;
-            this.button4.Text = "Request free days";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Text = "Free days";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button2
             // 
@@ -111,19 +126,6 @@ namespace ProjectUSI.Doctor.View
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(343, 409);
             this.panel3.TabIndex = 2;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.SystemColors.Info;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button5.Location = new System.Drawing.Point(25, 101);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(327, 67);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Add new check up";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // DoctorMainWindow
             // 

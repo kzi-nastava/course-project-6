@@ -49,5 +49,11 @@ namespace ProjectUSI.Doctor.View
             CRUDAppointmentWindow crudAppointmentWindow = new CRUDAppointmentWindow(type,new AppointmentsRepository());
             crudAppointmentWindow.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FreeDaysWindow freeDaysWindow = new FreeDaysWindow();
+            freeDaysWindow.Show();
+        }
     }
 }

@@ -1,0 +1,16 @@
+[
+  {
+  "Doctor" : "Janko Jankovic",
+  "StartDate": "20/06/2022",
+  "EndDate": "24/06/2022",
+  "Reason": "",
+  "Status" : "Accepted"
+  },
+  {
+    "Doctor" : "Petar Petrovic",
+    "StartDate": "21/06/2022",
+    "EndDate": "28/06/2022",
+    "Reason": "",
+    "Status" : "OnHold"
+  }
+]
